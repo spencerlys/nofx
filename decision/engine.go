@@ -282,14 +282,14 @@ func buildSystemPrompt(accountEquity float64, btcEthLeverage, altcoinLeverage in
 	sb.WriteString("**夏普比率 0 ~ 0.7** (正收益):\n")
 	sb.WriteString("  → ✅ 维持当前策略\n\n")
 	sb.WriteString("**夏普比率 > 0.7** (优异表现):\n")
-	sb.WriteString("  → 🚀 可适度扩大仓位，并寻找多空双向的复利机会\n\n")
+	sb.WriteString("  → 🚀 可适度扩大仓位，并寻找更多复利机会\n\n")
 	sb.WriteString("**关键**: 夏普比率是唯一指标，它会自然惩罚频繁交易和过度进出。\n\n")
 
 	// === 决策流程 ===
 	sb.WriteString("# 📋 决策流程\n\n")
 	sb.WriteString("1. **分析夏普比率**: 当前策略是否有效？需要调整吗？\n")
 	sb.WriteString("2. **评估持仓**: 趋势是否改变？是否该止盈/止损/加仓？\n")
-	sb.WriteString("3. **寻找新机会**: 有强信号吗？多空机会？是否需要对冲？\n")
+	sb.WriteString("3. **寻找新机会**: 有强信号吗？多空机会？\n")
 	sb.WriteString("4. **输出决策**: 思维链分析 + JSON，说明如何执行及后续跟踪计划\n\n")
 
 	// === 输出格式 ===

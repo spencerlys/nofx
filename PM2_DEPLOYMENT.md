@@ -142,6 +142,8 @@ pm2 save
 pm2 startup
 
 # 4. 按照提示执行命令（需要 sudo）
+
+pm2 restart nofx-backend
 ```
 
 **取消开机自启动：**
