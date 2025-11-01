@@ -1,0 +1,74 @@
+{
+  "traders": [
+    {
+      "id": "hyperliquid_qwen_aggressive",
+      "name": "🔥 Hyperliquid Qwen (AGGRESSIVE)",
+      "enabled": true,
+      "ai_model": "custom",
+      "exchange": "hyperliquid",
+      
+      "hyperliquid_private_key": "YOUR_HYPERLIQUID_PRIVATE_KEY_1_HERE",
+      "hyperliquid_wallet_addr": "0xYourHyperliquidWalletAddress1",
+      "hyperliquid_testnet": false,
+      
+      "custom_api_url": "https://openrouter.ai/api/v1",
+      "custom_api_key": "YOUR_OPENROUTER_API_KEY_HERE",
+      "custom_model_name": "qwen/qwen-2.5-72b-instruct",
+      
+      "initial_balance": 1000,
+      "scan_interval_minutes": 3
+    },
+    {
+      "id": "hyperliquid_deepseek_aggressive",
+      "name": "🔥 Hyperliquid DeepSeek (AGGRESSIVE)",
+      "enabled": true,
+      "ai_model": "custom",
+      "exchange": "hyperliquid",
+      
+      "hyperliquid_private_key": "YOUR_HYPERLIQUID_PRIVATE_KEY_2_HERE",
+      "hyperliquid_wallet_addr": "0xYourHyperliquidWalletAddress2",
+      "hyperliquid_testnet": false,
+      
+      "custom_api_url": "https://openrouter.ai/api/v1",
+      "custom_api_key": "YOUR_OPENROUTER_API_KEY_HERE",
+      "custom_model_name": "deepseek/deepseek-chat",
+      
+      "initial_balance": 1000,
+      "scan_interval_minutes": 3
+    }
+  ],
+  
+  "leverage": {
+    "btc_eth_leverage": 10,
+    "altcoin_leverage": 8
+  },
+  
+  "use_default_coins": true,
+  "default_coins": [
+    "BTCUSDT",
+    "ETHUSDT",
+    "SOLUSDT",
+    "BNBUSDT",
+    "XRPUSDT",
+    "DOGEUSDT",
+    "ADAUSDT",
+    "AVAXUSDT",
+    "LINKUSDT",
+    "MATICUSDT",
+    "DOTUSDT",
+    "UNIUSDT",
+    "ATOMUSDT",
+    "LTCUSDT",
+    "NEARUSDT"
+  ],
+  
+  "coin_pool_api_url": "",
+  "oi_top_api_url": "",
+  
+  "api_server_port": 8080,
+  
+  "max_daily_loss": 15.0,
+  "max_drawdown": 30.0,
+  "stop_trading_minutes": 30
+}
+
