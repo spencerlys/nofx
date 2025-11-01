@@ -598,6 +598,7 @@ function StatCard({
 function DecisionCard({ decision, language }: { decision: DecisionRecord; language: Language }) {
   const [showInputPrompt, setShowInputPrompt] = useState(false);
   const [showCoT, setShowCoT] = useState(false);
+  const [showDecisionJSON, setShowDecisionJSON] = useState(false);
 
   return (
     <div className="rounded p-5 transition-all duration-300 hover:translate-y-[-2px]" style={{ border: '1px solid #2B3139', background: '#1E2329', boxShadow: '0 2px 8px rgba(0, 0, 0, 0.3)' }}>
@@ -647,12 +648,31 @@ function DecisionCard({ decision, language }: { decision: DecisionRecord; langua
             className="flex items-center gap-2 text-sm transition-colors"
             style={{ color: '#F0B90B' }}
           >
-            <span className="font-semibold">📤 {t('aiThinking', language)}</span>
+            <span className="font-semibold">🧠 {t('aiThinking', language)}</span>
             <span className="text-xs">{showCoT ? t('collapse', language) : t('expand', language)}</span>
           </button>
           {showCoT && (
             <div className="mt-2 rounded p-4 text-sm font-mono whitespace-pre-wrap max-h-96 overflow-y-auto" style={{ background: '#0B0E11', border: '1px solid #2B3139', color: '#EAECEF' }}>
               {decision.cot_trace}
+            </div>
+          )}
+        </div>
+      )}
+
+      {/* Decision JSON - Collapsible */}
+      {decision.decision_json && (
+        <div className="mb-3">
+          <button
+            onClick={() => setShowDecisionJSON(!showDecisionJSON)}
+            className="flex items-center gap-2 text-sm transition-colors"
+            style={{ color: '#0ECB81' }}
+          >
+            <span className="font-semibold">📋 {language === 'zh' ? 'AI 决策 JSON' : 'Decision JSON'}</span>
+            <span className="text-xs">{showDecisionJSON ? t('collapse', language) : t('expand', language)}</span>
+          </button>
+          {showDecisionJSON && (
+            <div className="mt-2 rounded p-4 text-sm font-mono whitespace-pre-wrap max-h-96 overflow-y-auto" style={{ background: '#0B0E11', border: '1px solid #2B3139', color: '#EAECEF' }}>
+              {decision.decision_json}
             </div>
           )}
         </div>
