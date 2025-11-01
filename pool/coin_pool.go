@@ -247,6 +247,12 @@ func loadCoinPoolCache() ([]CoinInfo, error) {
 			cacheAge.Minutes())
 	}
 
+	// "IsAvailable" 字段不会被序列化，需要在这里恢复默认值，
+	// 否则使用缓存时所有币种都会被过滤掉
+	for i := range cache.Coins {
+		cache.Coins[i].IsAvailable = true
+	}
+
 	return cache.Coins, nil
 }
 
