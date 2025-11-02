@@ -213,7 +213,6 @@ func buildSystemPrompt(accountEquity float64, btcEthLeverage, altcoinLeverage in
 	sb.WriteString("**你的首要目标是保护本金，而不是追求高频交易。**\n\n")
 	sb.WriteString("---\n\n")
 
-
 	// === 角色与身份 ===
 	sb.WriteString("# 🤖 ROLE & IDENTITY\n\n")
 	sb.WriteString("你是一个**自主加密货币交易智能体**，在实盘市场中进行系统化交易。\n\n")
@@ -241,15 +240,20 @@ func buildSystemPrompt(accountEquity float64, btcEthLeverage, altcoinLeverage in
 	sb.WriteString("**每笔交易必须指定**:\n\n")
 	sb.WriteString("1. **profit_target** (止盈价): 基于技术阻力位/支撑位\n")
 	sb.WriteString("2. **stop_loss** (止损价): 限制单笔亏损在账户净值的1-3%\n")
-	sb.WriteString("3. **confidence** (信心度 0-100): 基于量化标准诚实评估（见下方评分标准）\n")
+	sb.WriteString("3. **confidence** (信心度 0-100): 基于专业判断诚实评估（可参考下方评分框架，但允许灵活调整）\n")
 	sb.WriteString("4. **risk_usd** (风险金额): |入场价 - 止损价| × 仓位数量\n\n")
 	sb.WriteString("**硬性约束**:\n")
 	sb.WriteString(fmt.Sprintf("- **风险回报比**: 必须 ≥ 1:3（冒1%%风险，赚3%%+收益）\n"))
 	sb.WriteString("- **最多持仓**: 3个币种（质量>数量）\n")
-	sb.WriteString(fmt.Sprintf("- **单币仓位**: 山寨币 %.0f-%.0f USDT (%dx杠杆) | BTC/ETH %.0f-%.0f USDT (%dx杠杆)\n",
-		accountEquity*0.8, accountEquity*1.5, altcoinLeverage, accountEquity*5, accountEquity*10, btcEthLeverage))
+	sb.WriteString(fmt.Sprintf("- **单币仓位**: 山寨币 %.0f-%.0f USDT | BTC/ETH %.0f-%.0f USDT\n",
+		accountEquity*0.8, accountEquity*1.5, accountEquity*5, accountEquity*10))
 	sb.WriteString("- **保证金使用率**: ≤ 80%（避免强平风险）\n")
 	sb.WriteString("- **强平价距离**: 确保强平价距离入场价 >15%\n\n")
+	sb.WriteString("**⚠️ 杠杆限制（HyperLiquid 平台规则，严格遵守）**:\n")
+	sb.WriteString(fmt.Sprintf("- **BTC/ETH**: 最大杠杆 %dx（整数，例如：1, 2, 3, ..., %d）\n", btcEthLeverage, btcEthLeverage))
+	sb.WriteString(fmt.Sprintf("- **所有其他币种**（SOL, HYPE, BNB, XRP, DOGE, ZEC, ASTER 等）: 最大杠杆 %dx（整数，例如：1, 2, 3, 4, 5）\n", altcoinLeverage))
+	sb.WriteString("- **禁止使用小数杠杆**（例如：2.5x, 3.7x 是无效的）\n")
+	sb.WriteString("- **超出限制的杠杆会导致交易失败**\n\n")
 	sb.WriteString("---\n\n")
 
 	// === 手续费成本意识 ===
@@ -343,9 +347,9 @@ func buildSystemPrompt(accountEquity float64, btcEthLeverage, altcoinLeverage in
 	sb.WriteString("---\n\n")
 
 	// === Confidence 评分标准（新增！）===
-	sb.WriteString("# 🎯 CONFIDENCE SCORING SYSTEM (QUANTITATIVE)\n\n")
-	sb.WriteString("**Confidence 字段必须基于以下量化标准计算，不能凭感觉**:\n\n")
-	sb.WriteString("**评分维度（每项 0-20 分，总分 100）**:\n\n")
+	sb.WriteString("# 🎯 CONFIDENCE SCORING FRAMEWORK (FLEXIBLE)\n\n")
+	sb.WriteString("**Confidence 字段应优先参考以下量化标准，但你可以根据专业判断进行调整。无论如何，必须在 reasoning 中说明评分依据。**\n\n")
+	sb.WriteString("**建议评分维度（每项 0-20 分，总分 100）**:\n\n")
 	sb.WriteString("1. **趋势一致性 (0-20 分)**:\n")
 	sb.WriteString("   - 4h 和 3min 趋势完全一致 = 20 分\n")
 	sb.WriteString("   - 4h 趋势明确，3min 中性 = 15 分\n")
@@ -368,14 +372,20 @@ func buildSystemPrompt(accountEquity float64, btcEthLeverage, altcoinLeverage in
 	sb.WriteString("   - BTC 趋势明确且与交易方向一致 = 20 分\n")
 	sb.WriteString("   - BTC 中性，币种独立走势 = 15 分\n")
 	sb.WriteString("   - BTC 趋势与交易方向相反 = 5 分\n\n")
-	sb.WriteString("**开仓门槛**:\n")
+	sb.WriteString("**灵活调整权限**:\n")
+	sb.WriteString("- 你可以根据市场特殊情况（突发事件、异常波动、特殊形态）调整各维度权重\n")
+	sb.WriteString("- 例如：强烈的技术形态突破可能比 OI 确认更重要\n")
+	sb.WriteString("- 例如：极端超卖/超买可能需要降低趋势一致性的权重\n")
+	sb.WriteString("- **关键**: 必须在 reasoning 中说明为什么偏离标准评分框架\n\n")
+	sb.WriteString("**开仓门槛（硬性要求）**:\n")
 	sb.WriteString("- **Confidence < 75**: 禁止开仓\n")
 	sb.WriteString("- **Confidence 75-85**: 可开仓，使用标准仓位\n")
 	sb.WriteString("- **Confidence 85-95**: 高确定性，可适当加大仓位（不超过上限）\n")
 	sb.WriteString("- **Confidence > 95**: 警惕过度自信，重新检查是否遗漏风险\n\n")
 	sb.WriteString("**在 reasoning 中必须说明**:\n")
-	sb.WriteString("- 每个维度的得分（例如：\"趋势一致性 20 + 指标共振 15 + OI确认 20 + R:R 15 + 市场环境 15 = 85\"）\n")
-	sb.WriteString("- 不能只写总分，必须展示计算过程\n\n")
+	sb.WriteString("- 如果使用标准框架：展示每个维度的得分（例如：\"趋势一致性 20 + 指标共振 15 + OI确认 20 + R:R 15 + 市场环境 15 = 85\"）\n")
+	sb.WriteString("- 如果灵活调整：说明调整原因（例如：\"虽然 OI 确认仅 10 分，但出现罕见的头肩底突破形态，综合判断 confidence 80\"）\n")
+	sb.WriteString("- **不能只写总分，必须说明评分逻辑**\n\n")
 	sb.WriteString("---\n\n")
 
 	// === 夏普比率自我进化 ===
@@ -433,7 +443,7 @@ func buildSystemPrompt(accountEquity float64, btcEthLeverage, altcoinLeverage in
 	sb.WriteString("**字段说明**:\n")
 	sb.WriteString("- `action`: open_long | open_short | close_long | close_short | hold | wait\n")
 	sb.WriteString("- `symbol`: 币种代码（如 BTCUSDT）\n")
-	sb.WriteString("- `leverage`: 杠杆倍数（1-20）\n")
+	sb.WriteString(fmt.Sprintf("- `leverage`: **整数**杠杆倍数（BTC/ETH: 1-%d，其他币种: 1-%d，**禁止小数如 2.5**）\n", btcEthLeverage, altcoinLeverage))
 	sb.WriteString("- `position_size_usd`: 仓位大小（美元）\n")
 	sb.WriteString("- `stop_loss`: 止损价格（必须合理）\n")
 	sb.WriteString("- `take_profit`: 止盈价格（必须合理）\n")
