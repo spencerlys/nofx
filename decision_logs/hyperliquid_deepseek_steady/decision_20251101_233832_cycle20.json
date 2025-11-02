@@ -1,0 +1,30 @@
+{
+  "timestamp": "2025-11-01T23:38:32.15887Z",
+  "cycle_number": 20,
+  "input_prompt": "",
+  "cot_trace": "",
+  "decision_json": "",
+  "account_state": {
+    "total_balance": 91.201082,
+    "available_balance": 91.201082,
+    "total_unrealized_profit": -9.798918,
+    "position_count": 0,
+    "margin_used_pct": 0
+  },
+  "positions": null,
+  "candidate_coins": [
+    "ETHUSDT",
+    "HYPEUSDT",
+    "BNBUSDT",
+    "ZECUSDT",
+    "BTCUSDT",
+    "SOLUSDT",
+    "ASTERUSDT",
+    "XRPUSDT",
+    "DOGEUSDT"
+  ],
+  "decisions": null,
+  "execution_log": [],
+  "success": false,
+  "error_message": "获取AI决策失败: 解析AI响应失败: 提取决策失败: JSON解析失败: json: cannot unmarshal number 2.5 into Go struct field Decision.leverage of type int\nJSON内容: [\n  {\n    \"symbol\": \"HYPEUSDT\",\n    \"action\": \"open_long\",\n    \"leverage\": 2.5,\n    \"position_size_usd\": 36.5,\n    \"stop_loss\": 42.90,\n    \"take_profit\": 44.20,\n    \"confidence\": 82,\n    \"risk_usd\": 1.64,\n    \"reasoning\": \"收缩模式轻仓交易。4h趋势震荡但ZEC强势提供支撑，3min EMA支撑+MACD转正+RSI中性。风险回报比1:4.2，预期收益1.96%，手续费占比0.09%，净收益1.87%，收益/手续费=21.8x。Confidence评分：趋势一致性15+指标共振17+OI确认15+R:R20+市场环境15=82\"\n  }\n]\n\n=== AI思维链分析 ===\n## 思维链分析\n\n当前处于收缩模式（夏普比率 -0.32），需要谨慎交易。BTC 4小时趋势下跌（EMA20 \u003c EMA50, MACD负值），整体市场偏空。大部分币种4小时趋势也偏弱，只有ZECUSDT显示强势上升趋势。考虑到历史表现中HYPEUSDT相对较好，且当前技术面相对稳定，选择轻仓做多HYPEUSDT，但严格限制仓位和风险。\n\n## 交易决策\n\n```json"
+}

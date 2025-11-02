@@ -1,0 +1,30 @@
+{
+  "timestamp": "2025-11-02T00:02:32.20288Z",
+  "cycle_number": 28,
+  "input_prompt": "",
+  "cot_trace": "",
+  "decision_json": "",
+  "account_state": {
+    "total_balance": 91.201082,
+    "available_balance": 91.201082,
+    "total_unrealized_profit": -9.798918,
+    "position_count": 0,
+    "margin_used_pct": 0
+  },
+  "positions": null,
+  "candidate_coins": [
+    "HYPEUSDT",
+    "BNBUSDT",
+    "BTCUSDT",
+    "SOLUSDT",
+    "ASTERUSDT",
+    "XRPUSDT",
+    "DOGEUSDT",
+    "ZECUSDT",
+    "ETHUSDT"
+  ],
+  "decisions": null,
+  "execution_log": [],
+  "success": false,
+  "error_message": "获取AI决策失败: 解析AI响应失败: 决策验证失败: 决策 #1 验证失败: 杠杆必须在1-5之间（ZECUSDT，当前配置上限5倍）: 10\n\n=== AI思维链分析 ===\n## 思维链分析\n\n当前夏普比率-0.33处于轻微亏损状态，需要收缩模式操作。BTC 4小时趋势看涨（EMA20\u003eEMA50），但大多数山寨币4小时仍处于下跌趋势。观察到ZECUSDT出现极端超卖信号（RSI 15.57）且4小时趋势向上，技术指标显示可能反弹。预期收益1.2%远超手续费0.09%的5倍要求，风险回报比1:4符合标准。\n\n## 决策JSON\n\n```json"
+}

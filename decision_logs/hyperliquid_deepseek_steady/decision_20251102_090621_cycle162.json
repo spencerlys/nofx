@@ -1,0 +1,51 @@
+{
+  "timestamp": "2025-11-02T09:06:21.588875Z",
+  "cycle_number": 162,
+  "input_prompt": "",
+  "cot_trace": "",
+  "decision_json": "",
+  "account_state": {
+    "total_balance": 90.227781,
+    "available_balance": 73.99490399999999,
+    "total_unrealized_profit": -10.772219000000007,
+    "position_count": 2,
+    "margin_used_pct": 18.084668032195832
+  },
+  "positions": [
+    {
+      "symbol": "ETHUSDT",
+      "side": "long",
+      "position_amt": 0.0116,
+      "entry_price": 3896.2,
+      "mark_price": 3895.8,
+      "unrealized_profit": -0.00464,
+      "leverage": 10,
+      "liquidation_price": 3579.7978536242
+    },
+    {
+      "symbol": "XRPUSDT",
+      "side": "long",
+      "position_amt": 14,
+      "entry_price": 2.5333,
+      "mark_price": 2.5281999999999996,
+      "unrealized_profit": -0.0714,
+      "leverage": 3,
+      "liquidation_price": 1.7331912821
+    }
+  ],
+  "candidate_coins": [
+    "SOLUSDT",
+    "ASTERUSDT",
+    "DOGEUSDT",
+    "ZECUSDT",
+    "ETHUSDT",
+    "HYPEUSDT",
+    "BNBUSDT",
+    "XRPUSDT",
+    "BTCUSDT"
+  ],
+  "decisions": null,
+  "execution_log": [],
+  "success": false,
+  "error_message": "获取AI决策失败: 调用AI API失败: API返回错误 (status 429): {\"error\":{\"message\":\"Provider returned error\",\"code\":429,\"metadata\":{\"raw\":\"deepseek/deepseek-chat-v3.1 is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations\",\"provider_name\":\"GMICloud\"}},\"user_id\":\"user_33oiiDl8lB7HG7wwIZywSY1FwTp\"}"
+}

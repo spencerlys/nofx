@@ -1,0 +1,151 @@
+{
+  "timestamp": "2025-11-02T01:54:49.042669Z",
+  "cycle_number": 18,
+  "input_prompt": "交易已运行 **51 分钟** | 当前周期: **#18** | 时间: 2025-11-02 01:54:08\n\n⚠️ **重要提醒**: 下方所有价格和指标数据的顺序为: **最旧 → 最新**\n**数组的最后一个元素是最新数据，第一个元素是最旧数据。**\n\n**时间框架说明**: 除非特别标注，日内序列数据为 **3分钟间隔**。\n\n---\n\n## � HISTORICAL PERFORMANCE REVIEW (Last 100 Cycles)\n\n**⚠️ 重要：以下是你过去的交易表现，请从中学习并避免重复错误。**\n\n### 📊 Overall Statistics\n\n- **总交易数**: 17 (盈利 7, 亏损 10)\n- **胜率**: 41.2%\n- **平均盈利**: $0.11 | **平均亏损**: $-0.24\n- **盈亏比 (Profit Factor)**: 0.32\n- **夏普比率 (Sharpe Ratio)**: -0.12\n\n### 🎯 Current Trading Mode (MANDATORY)\n\n⚠️ **状态**: 轻微亏损 - 收缩模式\n**强制规则**: 仓位限制为正常的 50%，杠杆限制为正常的 50%，confidence ≥ 85\n\n### 🏆 Symbol Performance Analysis\n\n**表现最佳**: DOGEUSDT\n  - 交易次数: 1 (盈利 1, 亏损 0)\n  - 胜率: 100.0% | 总盈亏: $0.08 | 平均盈亏: $0.08\n\n**表现最差**: ZECUSDT\n  - 交易次数: 8 (盈利 3, 亏损 5)\n  - 胜率: 37.5% | 总盈亏: $-0.98 | 平均盈亏: $-0.12\n\n### 📋 Recent Trades (Last 10)\n\n✅ **ZECUSDT LONG**: 401.3100 → 403.6900 | PnL: +1.19% ($0.21) | 持仓: 9m7.941916s\n✅ **XRPUSDT SHORT**: 2.5007 → 2.4997 | PnL: +0.08% ($0.03) | 持仓: 32m27.399633s\n✅ **DOGEUSDT SHORT**: 0.1872 → 0.1868 | PnL: +0.43% ($0.08) | 持仓: 49m10.925811s\n❌ **HYPEUSDT SHORT**: 43.1760 → 43.2810 | PnL: -0.49% ($-0.18) | 持仓: 35m3.943755s\n❌ **SOLUSDT SHORT**: 185.3500 → 185.9700 | PnL: -1.67% ($-0.24) | 持仓: 1h7m3.214634s\n❌ **LTCUSDT LONG**: 100.0800 → 100.0400 | PnL: -0.20% ($-0.04) | 持仓: 5m3.476064s\n❌ **LTCUSDT LONG**: 100.0100 → 99.9100 | PnL: -0.50% ($-0.07) | 持仓: 5m50.424204s\n✅ **ZECUSDT LONG**: 412.3500 → 412.4200 | PnL: +0.08% ($0.02) | 持仓: 2m59.308889s\n❌ **ZECUSDT LONG**: 412.4700 → 412.3400 | PnL: -0.16% ($-0.03) | 持仓: 2m55.633958s\n❌ **LTCUSDT LONG**: 100.0800 → 99.8000 | PnL: -1.40% ($-0.38) | 持仓: 14m58.963082s\n\n⚠️ **警告**: 最近 5 笔中有 4 笔亏损（胜率 20%）\n**强制规则**: 仓位限制为正常的 50%%，confidence 门槛提高至 ≥ 85\n\n### 💡 Key Learnings (MANDATORY)\n\n**基于历史表现，你必须**:\n- ❌ **避免**: ZECUSDT 表现最差，除非有极强信号（confidence ≥ 90）\n- ✅ **优先**: DOGEUSDT 表现最佳，可优先考虑该币种的机会\n- ⚠️ **胜率偏低**: 提高开仓门槛（confidence ≥ 80），减少交易频率\n- ⚠️ **盈亏比不佳**: 扩大止盈目标，收紧止损，提高风险回报比\n\n---\n\n## 💰 ACCOUNT STATUS\n\n- **账户净值**: $90.17 USDT\n- **可用余额**: $66.87 USDT (74.2% of equity)\n- **总盈亏**: -10.73%\n- **保证金使用率**: 25.4% (上限 80%)\n- **持仓数量**: 1/3\n\n## 🔍 BTC MARKET OVERVIEW (Market Leader)\n\n- **当前价格**: $109920.10\n- **1小时变化**: -0.00%\n- **4小时变化**: -0.12%\n- **MACD**: -6.4015\n- **RSI(7)**: 35.06\n\n📉 **BTC趋势**: 看跌（价格 \u003c EMA20, MACD \u003c 0）\n\n---\n\n## 📊 CURRENT POSITIONS \u0026 PERFORMANCE\n\n### Position 1: ETHUSDT SHORT\n\n- **入场价**: 3872.1000 | **当前价**: 3867.2000\n- **未实现盈亏**: +2.53%\n- **杠杆**: 20x | **保证金占用**: $23\n- **强平价**: 3984.4750\n- **持仓时长**: 51分钟\n\n**市场数据 (用于评估是否继续持有/平仓)**:\n\ncurrent_price = 3867.99, current_ema20 = 3869.261, current_macd = 0.782, current_rsi (7 period) = 42.066\n\nIn addition, here is the latest ETHUSDT open interest and funding rate for perps:\n\nOpen Interest: Latest: 1589601.99 Average: 1588012.38\n\nFunding Rate: 7.82e-05\n\nIntraday series (3‑minute intervals, oldest → latest):\n\nMid prices: [3873.000, 3872.200, 3875.690, 3873.620, 3872.650, 3871.740, 3868.050, 3870.570, 3869.030, 3867.990]\n\nEMA indicators (20‑period): [3867.078, 3867.566, 3868.339, 3868.842, 3869.205, 3869.446, 3869.313, 3869.433, 3869.395, 3869.261]\n\nMACD indicators: [0.491, 0.816, 1.340, 1.570, 1.655, 1.631, 1.298, 1.224, 1.029, 0.782]\n\nRSI indicators (7‑Period): [73.810, 68.947, 76.745, 65.384, 60.488, 55.907, 41.159, 51.378, 45.717, 42.066]\n\nRSI indicators (14‑Period): [60.151, 58.133, 63.834, 58.726, 56.447, 54.317, 46.632, 51.662, 48.645, 46.663]\n\nLonger‑term context (4‑hour timeframe):\n\n20‑Period EMA: 3883.838 vs. 50‑Period EMA: 3937.041\n\n3‑Period ATR: 30.298 vs. 14‑Period ATR: 59.782\n\nCurrent Volume: 66501.496 vs. Average Volume: 584927.955\n\nMACD indicators: [-47.890, -42.855, -41.491, -38.867, -36.426, -32.758, -28.160, -25.408, -23.456, -21.990]\n\nRSI indicators (14‑Period): [43.937, 46.700, 43.338, 44.846, 44.778, 46.807, 48.847, 47.160, 46.430, 45.917]\n\n\n---\n\n## 🎯 CANDIDATE COINS MARKET DATA (9 coins)\n\n**以下是所有候选币种的完整市场数据，用于寻找新交易机会。**\n\n⚠️ **记住**: 所有序列数据顺序为 **最旧 → 最新**（数组最后一个元素是最新数据）\n\n### 1. ASTERUSDT\n\ncurrent_price = 0.96, current_ema20 = 0.960, current_macd = -0.000, current_rsi (7 period) = 32.057\n\nIn addition, here is the latest ASTERUSDT open interest and funding rate for perps:\n\nOpen Interest: Latest: 148974987.00 Average: 148826012.01\n\nFunding Rate: 5.00e-05\n\nIntraday series (3‑minute intervals, oldest → latest):\n\nMid prices: [0.962, 0.961, 0.961, 0.963, 0.964, 0.963, 0.958, 0.958, 0.957, 0.957]\n\nEMA indicators (20‑period): [0.960, 0.960, 0.960, 0.961, 0.961, 0.961, 0.961, 0.961, 0.960, 0.960]\n\nMACD indicators: [0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.000, 0.000, -0.000]\n\nRSI indicators (7‑Period): [64.850, 53.492, 54.211, 66.799, 71.575, 58.246, 32.684, 36.307, 33.502, 32.057]\n\nRSI indicators (14‑Period): [52.471, 48.326, 48.662, 55.243, 58.261, 53.011, 39.287, 41.112, 39.411, 38.553]\n\nLonger‑term context (4‑hour timeframe):\n\n20‑Period EMA: 0.987 vs. 50‑Period EMA: 1.041\n\n3‑Period ATR: 0.023 vs. 14‑Period ATR: 0.042\n\nCurrent Volume: 9758425.000 vs. Average Volume: 87845560.600\n\nMACD indicators: [-0.036, -0.032, -0.029, -0.024, -0.023, -0.021, -0.020, -0.021, -0.020, -0.021]\n\nRSI indicators (14‑Period): [45.909, 47.609, 47.516, 50.604, 46.496, 45.942, 45.403, 43.460, 43.835, 42.414]\n\n\n### 2. HYPEUSDT\n\ncurrent_price = 42.62, current_ema20 = 42.588, current_macd = -0.029, current_rsi (7 period) = 55.763\n\nIn addition, here is the latest HYPEUSDT open interest and funding rate for perps:\n\nOpen Interest: Latest: 4430343.15 Average: 4425912.81\n\nFunding Rate: 5.00e-05\n\nIntraday series (3‑minute intervals, oldest → latest):\n\nMid prices: [42.448, 42.469, 42.485, 42.594, 42.765, 42.646, 42.542, 42.606, 42.622, 42.620]\n\nEMA indicators (20‑period): [42.568, 42.558, 42.551, 42.555, 42.575, 42.582, 42.578, 42.581, 42.585, 42.588]\n\nMACD indicators: [-0.125, -0.118, -0.109, -0.093, -0.065, -0.053, -0.050, -0.043, -0.035, -0.029]\n\nRSI indicators (7‑Period): [40.470, 44.572, 47.770, 64.193, 77.273, 59.598, 48.327, 54.504, 56.037, 55.763]\n\nRSI indicators (14‑Period): [33.807, 35.498, 36.823, 45.095, 55.041, 48.462, 43.561, 47.106, 47.986, 47.879]\n\nLonger‑term context (4‑hour timeframe):\n\n20‑Period EMA: 44.391 vs. 50‑Period EMA: 44.227\n\n3‑Period ATR: 1.102 vs. 14‑Period ATR: 1.722\n\nCurrent Volume: 714360.580 vs. Average Volume: 2262890.475\n\nMACD indicators: [-0.155, -0.305, -0.399, -0.427, -0.475, -0.516, -0.570, -0.593, -0.624, -0.694]\n\nRSI indicators (14‑Period): [43.470, 41.587, 42.745, 45.142, 43.625, 43.227, 41.853, 42.755, 41.621, 38.789]\n\n\n### 3. BNBUSDT\n\ncurrent_price = 1091.74, current_ema20 = 1092.314, current_macd = -0.188, current_rsi (7 period) = 40.326\n\nIn addition, here is the latest BNBUSDT open interest and funding rate for perps:\n\nOpen Interest: Latest: 502049.73 Average: 501547.68\n\nFunding Rate: 0.00e+00\n\nIntraday series (3‑minute intervals, oldest → latest):\n\nMid prices: [1093.320, 1092.700, 1092.700, 1092.420, 1092.290, 1092.140, 1091.230, 1092.090, 1091.980, 1091.740]\n\nEMA indicators (20‑period): [1092.682, 1092.684, 1092.686, 1092.660, 1092.625, 1092.579, 1092.450, 1092.416, 1092.375, 1092.314]\n\nMACD indicators: [0.074, 0.068, 0.062, 0.035, 0.003, -0.035, -0.136, -0.145, -0.160, -0.188]\n\nRSI indicators (7‑Period): [62.133, 50.063, 50.063, 44.722, 42.279, 39.383, 26.524, 45.974, 44.227, 40.326]\n\nRSI indicators (14‑Period): [52.802, 47.809, 47.809, 45.553, 44.503, 43.263, 36.604, 45.190, 44.363, 42.532]\n\nLonger‑term context (4‑hour timeframe):\n\n20‑Period EMA: 1094.951 vs. 50‑Period EMA: 1108.730\n\n3‑Period ATR: 7.115 vs. 14‑Period ATR: 15.912\n\nCurrent Volume: 22844.680 vs. Average Volume: 196581.591\n\nMACD indicators: [-10.220, -9.812, -9.477, -9.009, -8.805, -8.349, -7.623, -6.782, -6.047, -5.600]\n\nRSI indicators (14‑Period): [42.086, 44.338, 43.915, 44.491, 43.198, 44.476, 46.298, 47.556, 47.546, 46.209]\n\n\n### 4. BTCUSDT\n\ncurrent_price = 109920.10, current_ema20 = 109975.737, current_macd = -6.401, current_rsi (7 period) = 35.064\n\nIn addition, here is the latest BTCUSDT open interest and funding rate for perps:\n\nOpen Interest: Latest: 76775.74 Average: 76698.97\n\nFunding Rate: 9.05e-05\n\nIntraday series (3‑minute intervals, oldest → latest):\n\nMid prices: [110058.000, 110040.600, 110045.200, 110030.000, 110003.100, 109993.000, 109925.100, 109969.500, 109942.700, 109920.100]\n\nEMA indicators (20‑period): [109977.287, 109983.316, 109989.210, 109993.095, 109994.048, 109993.948, 109987.391, 109985.687, 109981.593, 109975.737]\n\nMACD indicators: [5.228, 9.368, 12.872, 14.258, 13.036, 11.124, 4.083, 2.061, -1.684, -6.401]\n\nRSI indicators (7‑Period): [70.427, 64.338, 65.264, 59.323, 49.938, 46.701, 30.962, 45.082, 39.406, 35.064]\n\nRSI indicators (14‑Period): [58.360, 55.926, 56.443, 54.181, 50.336, 48.932, 40.710, 46.983, 43.960, 41.533]\n\nLonger‑term context (4‑hour timeframe):\n\n20‑Period EMA: 110242.716 vs. 50‑Period EMA: 111162.201\n\n3‑Period ATR: 511.886 vs. 14‑Period ATR: 1157.562\n\nCurrent Volume: 1976.953 vs. Average Volume: 19681.234\n\nMACD indicators: [-828.593, -777.962, -749.012, -666.956, -608.572, -550.238, -485.741, -430.008, -397.540, -377.711]\n\nRSI indicators (14‑Period): [46.795, 45.218, 44.117, 47.677, 46.823, 47.249, 48.238, 48.212, 46.902, 46.054]\n\n\n### 5. SOLUSDT\n\ncurrent_price = 184.78, current_ema20 = 185.125, current_macd = -0.161, current_rsi (7 period) = 32.418\n\nIn addition, here is the latest SOLUSDT open interest and funding rate for perps:\n\nOpen Interest: Latest: 8032574.65 Average: 8024542.08\n\nFunding Rate: 4.92e-05\n\nIntraday series (3‑minute intervals, oldest → latest):\n\nMid prices: [185.360, 185.220, 185.370, 185.390, 185.260, 185.100, 184.760, 184.900, 184.840, 184.780]\n\nEMA indicators (20‑period): [185.284, 185.278, 185.287, 185.297, 185.293, 185.275, 185.226, 185.195, 185.161, 185.125]\n\nMACD indicators: [-0.145, -0.134, -0.112, -0.092, -0.086, -0.092, -0.124, -0.136, -0.148, -0.161]\n\nRSI indicators (7‑Period): [58.716, 49.405, 57.775, 58.834, 49.430, 40.203, 27.484, 37.051, 34.758, 32.418]\n\nRSI indicators (14‑Period): [46.078, 42.716, 47.165, 47.747, 44.325, 40.480, 33.775, 38.306, 37.134, 35.948]\n\nLonger‑term context (4‑hour timeframe):\n\n20‑Period EMA: 188.044 vs. 50‑Period EMA: 191.544\n\n3‑Period ATR: 2.154 vs. 14‑Period ATR: 3.665\n\nCurrent Volume: 764593.690 vs. Average Volume: 3504672.102\n\nMACD indicators: [-2.569, -2.419, -2.367, -2.300, -2.334, -2.304, -2.239, -2.170, -2.083, -2.111]\n\nRSI indicators (14‑Period): [44.578, 45.067, 43.346, 43.331, 41.135, 41.988, 42.437, 42.252, 42.549, 39.539]\n\n\n### 6. XRPUSDT\n\ncurrent_price = 2.50, current_ema20 = 2.499, current_macd = -0.001, current_rsi (7 period) = 30.480\n\nIn addition, here is the latest XRPUSDT open interest and funding rate for perps:\n\nOpen Interest: Latest: 200105787.60 Average: 199905681.81\n\nFunding Rate: 7.16e-05\n\nIntraday series (3‑minute intervals, oldest → latest):\n\nMid prices: [2.501, 2.500, 2.502, 2.502, 2.501, 2.499, 2.495, 2.496, 2.496, 2.495]\n\nEMA indicators (20‑period): [2.500, 2.500, 2.500, 2.501, 2.501, 2.500, 2.500, 2.500, 2.499, 2.499]\n\nMACD indicators: [-0.000, -0.000, -0.000, -0.000, -0.000, -0.000, -0.001, -0.001, -0.001, -0.001]\n\nRSI indicators (7‑Period): [54.413, 49.281, 62.313, 57.604, 50.875, 41.458, 26.070, 34.386, 35.096, 30.480]\n\nRSI indicators (14‑Period): [48.137, 46.148, 52.755, 50.920, 48.211, 44.009, 35.023, 38.952, 39.282, 36.720]\n\nLonger‑term context (4‑hour timeframe):\n\n20‑Period EMA: 2.517 vs. 50‑Period EMA: 2.539\n\n3‑Period ATR: 0.021 vs. 14‑Period ATR: 0.044\n\nCurrent Volume: 15827502.300 vs. Average Volume: 97139660.127\n\nMACD indicators: [-0.026, -0.021, -0.020, -0.019, -0.019, -0.018, -0.018, -0.017, -0.016, -0.016]\n\nRSI indicators (14‑Period): [47.537, 50.373, 45.933, 46.934, 45.610, 44.811, 45.026, 45.893, 45.775, 44.180]\n\n\n### 7. DOGEUSDT\n\ncurrent_price = 0.19, current_ema20 = 0.186, current_macd = -0.000, current_rsi (7 period) = 24.203\n\nIn addition, here is the latest DOGEUSDT open interest and funding rate for perps:\n\nOpen Interest: Latest: 1469577423.00 Average: 1468107845.58\n\nFunding Rate: 3.68e-05\n\nIntraday series (3‑minute intervals, oldest → latest):\n\nMid prices: [0.187, 0.186, 0.186, 0.186, 0.186, 0.186, 0.186, 0.186, 0.186, 0.186]\n\nEMA indicators (20‑period): [0.187, 0.187, 0.187, 0.187, 0.187, 0.187, 0.187, 0.187, 0.186, 0.186]\n\nMACD indicators: [-0.000, -0.000, -0.000, -0.000, -0.000, -0.000, -0.000, -0.000, -0.000, -0.000]\n\nRSI indicators (7‑Period): [45.949, 40.200, 44.268, 44.268, 43.595, 41.393, 25.419, 31.225, 26.768, 24.203]\n\nRSI indicators (14‑Period): [42.634, 39.972, 41.925, 41.925, 41.663, 40.838, 33.275, 35.680, 33.310, 31.859]\n\nLonger‑term context (4‑hour timeframe):\n\n20‑Period EMA: 0.188 vs. 50‑Period EMA: 0.193\n\n3‑Period ATR: 0.002 vs. 14‑Period ATR: 0.003\n\nCurrent Volume: 160185276.000 vs. Average Volume: 869652122.450\n\nMACD indicators: [-0.004, -0.003, -0.003, -0.003, -0.003, -0.002, -0.002, -0.002, -0.002, -0.002]\n\nRSI indicators (14‑Period): [41.649, 44.545, 42.949, 44.059, 44.297, 44.241, 44.932, 45.089, 44.974, 42.063]\n\n\n### 8. ZECUSDT\n\ncurrent_price = 408.49, current_ema20 = 410.772, current_macd = 1.112, current_rsi (7 period) = 33.753\n\nIn addition, here is the latest ZECUSDT open interest and funding rate for perps:\n\nOpen Interest: Latest: 540011.43 Average: 539471.41\n\nFunding Rate: -1.08e-03\n\nIntraday series (3‑minute intervals, oldest → latest):\n\nMid prices: [417.510, 416.150, 415.000, 413.340, 411.950, 411.790, 409.200, 410.190, 408.470, 408.490]\n\nEMA indicators (20‑period): [410.465, 411.006, 411.387, 411.573, 411.609, 411.626, 411.395, 411.280, 411.012, 410.772]\n\nMACD indicators: [3.962, 3.938, 3.783, 3.485, 3.102, 2.753, 2.242, 1.895, 1.465, 1.112]\n\nRSI indicators (7‑Period): [71.302, 63.914, 57.987, 50.154, 44.307, 43.624, 33.788, 39.837, 33.613, 33.753]\n\nRSI indicators (14‑Period): [62.347, 59.004, 56.257, 52.460, 49.451, 49.102, 43.720, 46.149, 42.701, 42.754]\n\nLonger‑term context (4‑hour timeframe):\n\n20‑Period EMA: 388.481 vs. 50‑Period EMA: 344.723\n\n3‑Period ATR: 25.083 vs. 14‑Period ATR: 27.122\n\nCurrent Volume: 409826.867 vs. Average Volume: 584551.654\n\nMACD indicators: [17.320, 18.107, 20.175, 23.970, 27.376, 27.997, 27.913, 27.940, 26.771, 25.283]\n\nRSI indicators (14‑Period): [62.774, 62.800, 67.163, 72.251, 73.547, 65.454, 64.354, 65.380, 61.337, 60.114]\n\n\n### 9. ETHUSDT\n\ncurrent_price = 3867.99, current_ema20 = 3869.261, current_macd = 0.782, current_rsi (7 period) = 42.066\n\nIn addition, here is the latest ETHUSDT open interest and funding rate for perps:\n\nOpen Interest: Latest: 1589601.99 Average: 1588012.38\n\nFunding Rate: 7.82e-05\n\nIntraday series (3‑minute intervals, oldest → latest):\n\nMid prices: [3873.000, 3872.200, 3875.690, 3873.620, 3872.650, 3871.740, 3868.050, 3870.570, 3869.030, 3867.990]\n\nEMA indicators (20‑period): [3867.078, 3867.566, 3868.339, 3868.842, 3869.205, 3869.446, 3869.313, 3869.433, 3869.395, 3869.261]\n\nMACD indicators: [0.491, 0.816, 1.340, 1.570, 1.655, 1.631, 1.298, 1.224, 1.029, 0.782]\n\nRSI indicators (7‑Period): [73.810, 68.947, 76.745, 65.384, 60.488, 55.907, 41.159, 51.378, 45.717, 42.066]\n\nRSI indicators (14‑Period): [60.151, 58.133, 63.834, 58.726, 56.447, 54.317, 46.632, 51.662, 48.645, 46.663]\n\nLonger‑term context (4‑hour timeframe):\n\n20‑Period EMA: 3883.838 vs. 50‑Period EMA: 3937.041\n\n3‑Period ATR: 30.298 vs. 14‑Period ATR: 59.782\n\nCurrent Volume: 66501.496 vs. Average Volume: 584927.955\n\nMACD indicators: [-47.890, -42.855, -41.491, -38.867, -36.426, -32.758, -28.160, -25.408, -23.456, -21.990]\n\nRSI indicators (14‑Period): [43.937, 46.700, 43.338, 44.846, 44.778, 46.807, 48.847, 47.160, 46.430, 45.917]\n\n\n---\n\n## 📋 YOUR TASK\n\n⚠️ **CRITICAL REMINDER**: You are trading with REAL MONEY. Every decision has REAL consequences.\n\n**决策流程（按顺序执行）**:\n\n1. **检查历史表现**: 连续亏损？夏普比率？是否被禁止开新仓？\n2. **评估现有持仓**（如果有）: 是否需要平仓/继续持有？持仓时长是否 \u003c 30 分钟？\n3. **判断 4h 主趋势**: 上升/下降/震荡？BTC 趋势如何？\n4. **扫描新机会**（如果有可用资金）: 哪些币种有强信号？是否与 4h 趋势一致？\n5. **计算手续费影响**: 每笔交易预期收益是否 \u003e 手续费的 5 倍？\n6. **量化 Confidence 评分**: 使用 5 维度评分系统（趋势一致性 + 指标共振 + OI确认 + R:R + 市场环境）\n7. **验证强制规则**: 是否违反趋势优先级？是否在冷静期？是否连续亏损？\n8. **输出决策**: 先简洁的思维链分析（2-5句话），然后输出JSON决策数组\n\n**强制检查清单（违反将导致交易失败）**:\n- 🚨 **夏普比率约束**: Sharpe \u003c -0.5 时，完全禁止开新仓\n- 🚨 **连续亏损保护**: 连续 3 笔亏损时，暂停开新仓 1 个周期\n- 🚨 **趋势优先级**: 禁止使用 3min 信号对抗 4h 主趋势\n- 🚨 **最小持仓时间**: 开仓后必须持有至少 30 分钟（除非触发止损/止盈）\n- 🚨 **BTC 相关性**: BTC 4h 下跌时，禁止做多山寨币\n\n**标准检查清单**:\n- ✅ 数据顺序: 最旧 → 最新（数组最后一个元素是最新）\n- ✅ 风险回报比: ≥ 1:3（强制要求）\n- ✅ 预期收益: \u003e 0.5%（手续费 0.09% 的 5 倍以上）\n- ✅ Confidence: ≥ 75（基于量化评分，不能凭感觉）\n- ✅ Reasoning: 必须说明 4h 趋势、预期收益、手续费占比、Confidence 计算过程\n\n**不确定时选择 wait，不要强行交易。保护资本比追逐收益更重要。**\n\n",
+  "cot_trace": "当前处于收缩模式（夏普比率-0.12），需严格遵守confidence ≥ 85、仓位减半的规则。现有ETH空单已盈利2.53%且持仓51分钟，4小时仍处下跌趋势（EMA20 \u003c EMA50, MACD \u003c 0），3分钟MACD虽转正但未改变主趋势，应继续持有。BTC 4h明确下跌，禁止做多任何山寨币。扫描所有候选币种，DOGE虽历史表现好但4h趋势向下且3分钟无强做空信号（MACD=0，RSI=24但无动量），其他币种或趋势不明或信号不足。无任何机会满足confidence ≥ 85且符合趋势优先级规则，选择等待。\n\n```json",
+  "decision_json": "[\n  {\n    \"symbol\": \"ETHUSDT\",\n    \"action\": \"hold\",\n    \"reasoning\": \"4h下跌趋势未改（EMA20=3883 \\u003c EMA50=3937, MACD=-21.99），当前盈利2.53%且持仓超30分钟，继续持有\"\n  },\n  {\n    \"symbol\": \"ASTERUSDT\",\n    \"action\": \"wait\",\n    \"reasoning\": \"4h下跌趋势，3min无明确做空信号（MACD≈0），confidence不足85\"\n  },\n  {\n    \"symbol\": \"HYPEUSDT\",\n    \"action\": \"wait\",\n    \"reasoning\": \"4h下跌趋势（EMA20=44.39 \\u003c EMA50=44.23? 等待确认），3min MACD仍负但趋缓，未达高确定性\"\n  },\n  {\n    \"symbol\": \"BNBUSDT\",\n    \"action\": \"wait\",\n    \"reasoning\": \"4h下跌趋势（EMA20=1094 \\u003c EMA50=1108），3min RSI=40但MACD=-0.188，无强做空信号\"\n  },\n  {\n    \"symbol\": \"BTCUSDT\",\n    \"action\": \"wait\",\n    \"reasoning\": \"4h明确下跌，但3min RSI=35接近超卖，需等待更强做空信号（confidence\\u003c85）\"\n  },\n  {\n    \"symbol\": \"SOLUSDT\",\n    \"action\": \"wait\",\n    \"reasoning\": \"4h下跌趋势，3min RSI=32但MACD=-0.161无加速下跌，风险回报比不足1:3\"\n  },\n  {\n    \"symbol\": \"XRPUSDT\",\n    \"action\": \"wait\",\n    \"reasoning\": \"4h下跌趋势，3min RSI=30但价格波动极小（ATR=0.021），预期收益\\u003c0.5%\"\n  },\n  {\n    \"symbol\": \"DOGEUSDT\",\n    \"action\": \"wait\",\n    \"reasoning\": \"虽历史表现佳，但4h下跌且3min无动量（MACD=0），RSI=24但无反弹信号，不符合做空条件\"\n  },\n  {\n    \"symbol\": \"ZECUSDT\",\n    \"action\": \"wait\",\n    \"reasoning\": \"4h上涨趋势（EMA20=388 \\u003e EMA50=344），但BTC下跌禁止做多山寨币，且近期表现差\"\n  }\n]",
+  "account_state": {
+    "total_balance": 90.16617,
+    "available_balance": 66.865274,
+    "total_unrealized_profit": -10.833830000000006,
+    "position_count": 1,
+    "margin_used_pct": 25.369257671696605
+  },
+  "positions": [
+    {
+      "symbol": "ETHUSDT",
+      "side": "short",
+      "position_amt": 0.1183,
+      "entry_price": 3872.1,
+      "mark_price": 3867.2,
+      "unrealized_profit": 0.57967,
+      "leverage": 20,
+      "liquidation_price": 3984.4749639501
+    }
+  ],
+  "candidate_coins": [
+    "ASTERUSDT",
+    "HYPEUSDT",
+    "BNBUSDT",
+    "BTCUSDT",
+    "SOLUSDT",
+    "XRPUSDT",
+    "DOGEUSDT",
+    "ZECUSDT",
+    "ETHUSDT"
+  ],
+  "decisions": [
+    {
+      "action": "hold",
+      "symbol": "ETHUSDT",
+      "quantity": 0,
+      "leverage": 0,
+      "price": 0,
+      "order_id": 0,
+      "timestamp": "2025-11-02T01:54:40.02321Z",
+      "success": true,
+      "error": ""
+    },
+    {
+      "action": "wait",
+      "symbol": "ASTERUSDT",
+      "quantity": 0,
+      "leverage": 0,
+      "price": 0,
+      "order_id": 0,
+      "timestamp": "2025-11-02T01:54:41.02356Z",
+      "success": true,
+      "error": ""
+    },
+    {
+      "action": "wait",
+      "symbol": "HYPEUSDT",
+      "quantity": 0,
+      "leverage": 0,
+      "price": 0,
+      "order_id": 0,
+      "timestamp": "2025-11-02T01:54:42.024694Z",
+      "success": true,
+      "error": ""
+    },
+    {
+      "action": "wait",
+      "symbol": "BNBUSDT",
+      "quantity": 0,
+      "leverage": 0,
+      "price": 0,
+      "order_id": 0,
+      "timestamp": "2025-11-02T01:54:43.025945Z",
+      "success": true,
+      "error": ""
+    },
+    {
+      "action": "wait",
+      "symbol": "BTCUSDT",
+      "quantity": 0,
+      "leverage": 0,
+      "price": 0,
+      "order_id": 0,
+      "timestamp": "2025-11-02T01:54:44.026887Z",
+      "success": true,
+      "error": ""
+    },
+    {
+      "action": "wait",
+      "symbol": "SOLUSDT",
+      "quantity": 0,
+      "leverage": 0,
+      "price": 0,
+      "order_id": 0,
+      "timestamp": "2025-11-02T01:54:45.028846Z",
+      "success": true,
+      "error": ""
+    },
+    {
+      "action": "wait",
+      "symbol": "XRPUSDT",
+      "quantity": 0,
+      "leverage": 0,
+      "price": 0,
+      "order_id": 0,
+      "timestamp": "2025-11-02T01:54:46.030928Z",
+      "success": true,
+      "error": ""
+    },
+    {
+      "action": "wait",
+      "symbol": "DOGEUSDT",
+      "quantity": 0,
+      "leverage": 0,
+      "price": 0,
+      "order_id": 0,
+      "timestamp": "2025-11-02T01:54:47.038684Z",
+      "success": true,
+      "error": ""
+    },
+    {
+      "action": "wait",
+      "symbol": "ZECUSDT",
+      "quantity": 0,
+      "leverage": 0,
+      "price": 0,
+      "order_id": 0,
+      "timestamp": "2025-11-02T01:54:48.040836Z",
+      "success": true,
+      "error": ""
+    }
+  ],
+  "execution_log": [
+    "✓ ETHUSDT hold 成功",
+    "✓ ASTERUSDT wait 成功",
+    "✓ HYPEUSDT wait 成功",
+    "✓ BNBUSDT wait 成功",
+    "✓ BTCUSDT wait 成功",
+    "✓ SOLUSDT wait 成功",
+    "✓ XRPUSDT wait 成功",
+    "✓ DOGEUSDT wait 成功",
+    "✓ ZECUSDT wait 成功"
+  ],
+  "success": true,
+  "error_message": ""
+}

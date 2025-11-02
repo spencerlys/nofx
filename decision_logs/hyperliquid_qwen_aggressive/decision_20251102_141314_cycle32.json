@@ -1,0 +1,61 @@
+{
+  "timestamp": "2025-11-02T14:13:14.857473Z",
+  "cycle_number": 32,
+  "input_prompt": "",
+  "cot_trace": "",
+  "decision_json": "",
+  "account_state": {
+    "total_balance": 85.784973,
+    "available_balance": 49.64800499999999,
+    "total_unrealized_profit": -15.215027000000006,
+    "position_count": 3,
+    "margin_used_pct": 40.13957549418358
+  },
+  "positions": [
+    {
+      "symbol": "BTCUSDT",
+      "side": "short",
+      "position_amt": 0.0019,
+      "entry_price": 111107,
+      "mark_price": 110458,
+      "unrealized_profit": 1.2331,
+      "leverage": 10,
+      "liquidation_price": 120662.1899935023
+    },
+    {
+      "symbol": "SOLUSDT",
+      "side": "short",
+      "position_amt": 0.18,
+      "entry_price": 184.81,
+      "mark_price": 184.54,
+      "unrealized_profit": 0.0486,
+      "leverage": 5,
+      "liquidation_price": 216.2821409214
+    },
+    {
+      "symbol": "ASTERUSDT",
+      "side": "short",
+      "position_amt": 37,
+      "entry_price": 0.9282,
+      "mark_price": 0.91936,
+      "unrealized_profit": 0.32708,
+      "leverage": 5,
+      "liquidation_price": 1.0125981572
+    }
+  ],
+  "candidate_coins": [
+    "BTCUSDT",
+    "ETHUSDT",
+    "ASTERUSDT",
+    "HYPEUSDT",
+    "SOLUSDT",
+    "BNBUSDT",
+    "XRPUSDT",
+    "DOGEUSDT",
+    "ZECUSDT"
+  ],
+  "decisions": null,
+  "execution_log": [],
+  "success": false,
+  "error_message": "获取AI决策失败: 解析AI响应失败: 提取决策失败: 无法找到JSON数组起始\n\n=== AI思维链分析 ===\n当前处于轻微亏损收缩模式，夏普比率为-0.12"
+}

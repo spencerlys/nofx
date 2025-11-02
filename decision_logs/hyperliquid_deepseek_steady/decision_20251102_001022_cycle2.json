@@ -1,0 +1,30 @@
+{
+  "timestamp": "2025-11-02T00:10:22.110049Z",
+  "cycle_number": 2,
+  "input_prompt": "",
+  "cot_trace": "",
+  "decision_json": "",
+  "account_state": {
+    "total_balance": 91.201082,
+    "available_balance": 91.201082,
+    "total_unrealized_profit": -9.798918,
+    "position_count": 0,
+    "margin_used_pct": 0
+  },
+  "positions": null,
+  "candidate_coins": [
+    "BTCUSDT",
+    "ASTERUSDT",
+    "HYPEUSDT",
+    "BNBUSDT",
+    "ZECUSDT",
+    "ETHUSDT",
+    "SOLUSDT",
+    "XRPUSDT",
+    "DOGEUSDT"
+  ],
+  "decisions": null,
+  "execution_log": [],
+  "success": false,
+  "error_message": "获取AI决策失败: 解析AI响应失败: 决策验证失败: 决策 #1 验证失败: 杠杆必须在1-5之间（ZECUSDT，当前配置上限5倍）: 10\n\n=== AI思维链分析 ===\n## 思维链分析\n\n当前夏普比率-0.32，处于轻微亏损状态，需要执行收缩模式。BTC 4小时趋势不明确（EMA20 \u003c EMA50，MACD为负但收窄），整体市场震荡。多个山寨币出现极度超卖（RSI \u003c 25），但缺乏明确的趋势反转信号。由于胜率偏低且连续亏损，我将提高开仓门槛至confidence ≥ 85，优先考虑风险回报比优异的机会。\n\n经过扫描，ZECUSDT展现出较强的做多机会：4小时明确上升趋势（EMA20 \u003e EMA50，MACD为正），当前价格回调至支撑位，RSI从超卖反弹，负资金费率提供额外优势。预期收益2.5%远高于手续费要求。\n\n## 交易决策\n\n```json"
+}

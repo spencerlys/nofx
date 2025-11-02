@@ -1,0 +1,30 @@
+{
+  "timestamp": "2025-11-01T23:59:24.001999Z",
+  "cycle_number": 27,
+  "input_prompt": "",
+  "cot_trace": "",
+  "decision_json": "",
+  "account_state": {
+    "total_balance": 91.201082,
+    "available_balance": 91.201082,
+    "total_unrealized_profit": -9.798918,
+    "position_count": 0,
+    "margin_used_pct": 0
+  },
+  "positions": null,
+  "candidate_coins": [
+    "HYPEUSDT",
+    "BNBUSDT",
+    "XRPUSDT",
+    "ZECUSDT",
+    "BTCUSDT",
+    "ETHUSDT",
+    "ASTERUSDT",
+    "DOGEUSDT",
+    "SOLUSDT"
+  ],
+  "decisions": null,
+  "execution_log": [],
+  "success": false,
+  "error_message": "获取AI决策失败: 解析AI响应失败: 决策验证失败: 决策 #1 验证失败: 杠杆必须在1-5之间（ZECUSDT，当前配置上限5倍）: 10\n\n=== AI思维链分析 ===\n**思维链分析**: \n夏普比率-0.33处于轻微亏损状态，进入收缩模式。BTC 4小时趋势看跌（EMA20 \u003c EMA50，MACD \u003c 0），整体市场偏空。ZECUSDT显示最强做空信号：4小时EMA20\u003eEMA50但价格跌破EMA20，MACD转负，RSI超卖但仍在下跌趋势中，资金费率-0.157%显示强烈看空情绪。风险回报比1:4.2符合要求，预期收益1.68%远高于手续费0.09%。\n\n**Confidence评分**: 趋势一致性15（4h下跌+3min下跌）+ 指标共振15（EMA+MACD+OI确认）+ OI确认10（稳定）+ R:R 15（1:4.2）+ 市场环境15（BTC下跌趋势）= 70分\n\n```json"
+}

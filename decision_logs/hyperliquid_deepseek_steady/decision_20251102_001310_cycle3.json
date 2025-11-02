@@ -1,0 +1,30 @@
+{
+  "timestamp": "2025-11-02T00:13:10.118927Z",
+  "cycle_number": 3,
+  "input_prompt": "",
+  "cot_trace": "",
+  "decision_json": "",
+  "account_state": {
+    "total_balance": 91.201082,
+    "available_balance": 91.201082,
+    "total_unrealized_profit": -9.798918,
+    "position_count": 0,
+    "margin_used_pct": 0
+  },
+  "positions": null,
+  "candidate_coins": [
+    "ETHUSDT",
+    "BNBUSDT",
+    "DOGEUSDT",
+    "ZECUSDT",
+    "SOLUSDT",
+    "ASTERUSDT",
+    "HYPEUSDT",
+    "XRPUSDT",
+    "BTCUSDT"
+  ],
+  "decisions": null,
+  "execution_log": [],
+  "success": false,
+  "error_message": "获取AI决策失败: 解析AI响应失败: 提取决策失败: JSON解析失败: json: cannot unmarshal number 2.5 into Go struct field Decision.leverage of type int\nJSON内容: [\n  {\"symbol\": \"HYPEUSDT\", \"action\": \"open_long\", \"leverage\": 2.5, \"position_size_usd\": 36.5, \"stop_loss\": 42.50, \"take_profit\": 43.60, \"confidence\": 75, \"risk_usd\": 2.19, \"reasoning\": \"4h震荡偏空但HYPE历史表现最佳+RSI 34超卖+预期收益1.2%\u003e手续费5倍+R:R=1:3.7\"}\n]\n\n=== AI思维链分析 ===\n**思维链分析**：\n当前夏普比率-0.31处于轻微亏损状态，需要收缩模式操作。BTC 4小时显示下跌趋势（EMA20 \u003c EMA50，MACD为负），市场整体偏空。ETHUSDT虽然3分钟RSI显示超卖(32.9)，但4小时趋势明确下跌且历史表现最差，必须避免。HYPEUSDT是表现最佳币种，当前价格接近支撑，RSI 34显示超卖，有反弹机会，符合做多条件。\n\n**风险评估**：预期收益1.2%，手续费0.09%，净收益1.11%，收益/手续费=13.3倍，符合要求。趋势一致性15 + 指标共振15 + OI确认10 + R:R 15 + 市场环境10 = 65分，但考虑到HYPEUSDT历史表现优异且当前超卖严重，专业判断上调至75分。\n\n```json"
+}

@@ -1,0 +1,30 @@
+{
+  "timestamp": "2025-11-01T23:50:34.96601Z",
+  "cycle_number": 24,
+  "input_prompt": "",
+  "cot_trace": "",
+  "decision_json": "",
+  "account_state": {
+    "total_balance": 91.201082,
+    "available_balance": 91.201082,
+    "total_unrealized_profit": -9.798918,
+    "position_count": 0,
+    "margin_used_pct": 0
+  },
+  "positions": null,
+  "candidate_coins": [
+    "ETHUSDT",
+    "SOLUSDT",
+    "XRPUSDT",
+    "ASTERUSDT",
+    "HYPEUSDT",
+    "BNBUSDT",
+    "DOGEUSDT",
+    "ZECUSDT",
+    "BTCUSDT"
+  ],
+  "decisions": null,
+  "execution_log": [],
+  "success": false,
+  "error_message": "获取AI决策失败: 解析AI响应失败: 决策验证失败: 决策 #1 验证失败: 杠杆必须在1-5之间（HYPEUSDT，当前配置上限5倍）: 10\n\n=== AI思维链分析 ===\n## 思维链分析\n\n当前夏普比率-0.34处于轻微亏损状态，需要采用收缩模式。BTC 4小时趋势显示EMA20(110269) \u003c EMA50(111145)，MACD为-404.841，明确下跌趋势。根据趋势优先级规则，禁止做多任何币种。检查各币种后，发现HYPEUSDT有较强的做空信号：4h下跌趋势明确，3分钟RSI超卖但价格仍低于EMA20，MACD持续走弱，且该币种历史表现最佳。预期收益2.5%，远高于手续费要求。\n\n## Confidence量化评分\n- 趋势一致性：20分（4h和3min均下跌）\n- 指标共振：15分（EMA+MACD支持，RSI中性）\n- OI确认：10分（持仓量稳定）\n- 风险回报比：15分（1:4）\n- 市场环境：15分（BTC下跌趋势一致）\n- 总分：75分（达到收缩模式门槛）\n\n## JSON决策\n\n```json"
+}

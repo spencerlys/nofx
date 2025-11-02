@@ -28,7 +28,7 @@ Thumbs.db
 config.json
 
 # 决策日志
-decision_logs/
+# decision_logs/
 coin_pool_cache/
 nofx_test
 

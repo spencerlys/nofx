@@ -1,0 +1,42 @@
+{
+  "timestamp": "2025-11-01T16:09:34.590587Z",
+  "cycle_number": 5,
+  "input_prompt": "",
+  "cot_trace": "",
+  "decision_json": "",
+  "account_state": {
+    "total_balance": 101.214743,
+    "available_balance": 80.88068,
+    "total_unrealized_profit": 0.21474299999999857,
+    "position_count": 1,
+    "margin_used_pct": 19.92907298099843
+  },
+  "positions": [
+    {
+      "symbol": "SOLUSDT",
+      "side": "long",
+      "position_amt": 0.54,
+      "entry_price": 186.29,
+      "mark_price": 186.76999999999998,
+      "unrealized_profit": 0.2592,
+      "leverage": 5,
+      "liquidation_price": 152.9377720798
+    }
+  ],
+  "candidate_coins": [
+    "LINKUSDT",
+    "BTCUSDT",
+    "XRPUSDT",
+    "DOGEUSDT",
+    "AVAXUSDT",
+    "MATICUSDT",
+    "ETHUSDT",
+    "SOLUSDT",
+    "BNBUSDT",
+    "ADAUSDT"
+  ],
+  "decisions": null,
+  "execution_log": [],
+  "success": false,
+  "error_message": "获取AI决策失败: 解析AI响应失败: 决策验证失败: 决策 #2 验证失败: 无效的action: adjust_tp\n\n=== AI思维链分析 ===\n**思维链分析**:\n\n夏普比率-0.58表明当前策略表现不佳，需要严格控制交易频率。分析当前持仓和机会：\n\n1. **SOLUSDT持仓分析**: 当前持仓9分钟，盈利+1.29%。价格186.75 \u003e EMA20(185.796)，MACD持续上升(0.443)，RSI7=77.63显示超买但仍在强势区间。4小时级别仍处于下跌趋势(EMA20=188.652 \u003c EMA50=191.528)，但短期趋势向上。建议继续持有，设置合理止盈。\n\n2. **新机会评估**: \n   - BTC: RSI7=83.48严重超买，但MACD强势(104.222)，4小时级别仍下跌趋势 → 观望\n   - ETH: RSI7=71.57偏高，MACD向上但4小时级别下跌 → 观望\n   - 其他山寨币: 多数RSI偏高(60-77)，短期上涨但4小时级别多为下跌趋势 → 缺乏高质量机会\n\n3. **风险控制**: 夏普比率-0.58需要减少交易，当前持仓质量尚可，应耐心持有而非频繁操作。\n\n**决策**: 保持SOL持仓，设置合理止盈，其他币种观望，严格控制新开仓。\n\n```json"
+}

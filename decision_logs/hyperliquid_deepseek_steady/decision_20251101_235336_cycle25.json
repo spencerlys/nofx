@@ -1,0 +1,30 @@
+{
+  "timestamp": "2025-11-01T23:53:36.580604Z",
+  "cycle_number": 25,
+  "input_prompt": "",
+  "cot_trace": "",
+  "decision_json": "",
+  "account_state": {
+    "total_balance": 91.201082,
+    "available_balance": 91.201082,
+    "total_unrealized_profit": -9.798918,
+    "position_count": 0,
+    "margin_used_pct": 0
+  },
+  "positions": null,
+  "candidate_coins": [
+    "ETHUSDT",
+    "SOLUSDT",
+    "HYPEUSDT",
+    "ZECUSDT",
+    "ASTERUSDT",
+    "BNBUSDT",
+    "XRPUSDT",
+    "DOGEUSDT",
+    "BTCUSDT"
+  ],
+  "decisions": null,
+  "execution_log": [],
+  "success": false,
+  "error_message": "获取AI决策失败: 解析AI响应失败: 决策验证失败: 决策 #1 验证失败: 杠杆必须在1-5之间（ZECUSDT，当前配置上限5倍）: 10\n\n=== AI思维链分析 ===\n## 思维链分析\n\n当前处于轻微亏损状态（夏普比率 -0.34），强制进入收缩模式。BTC 4小时趋势看跌（EMA20 \u003c EMA50，MACD \u003c 0），因此禁止做多任何山寨币。扫描所有币种后，发现 ZECUSDT 有明显做空机会：4小时EMA20 \u003e EMA50显示强劲上涨趋势，但价格已从高位回调，RSI超卖，资金费率负值显示做空情绪。风险回报比达到1:4，符合要求。\n\n## 交易决策\n\n```json"
+}

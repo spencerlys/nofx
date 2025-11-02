@@ -1,0 +1,41 @@
+{
+  "timestamp": "2025-11-01T23:26:37.842944Z",
+  "cycle_number": 16,
+  "input_prompt": "",
+  "cot_trace": "",
+  "decision_json": "",
+  "account_state": {
+    "total_balance": 91.730506,
+    "available_balance": 58.389867,
+    "total_unrealized_profit": -9.269493999999995,
+    "position_count": 1,
+    "margin_used_pct": 38.23984356959723
+  },
+  "positions": [
+    {
+      "symbol": "ETHUSDT",
+      "side": "short",
+      "position_amt": 0.1812,
+      "entry_price": 3864.2,
+      "mark_price": 3871.7000000000003,
+      "unrealized_profit": -1.359,
+      "leverage": 20,
+      "liquidation_price": 3976.1755994892
+    }
+  ],
+  "candidate_coins": [
+    "ASTERUSDT",
+    "XRPUSDT",
+    "DOGEUSDT",
+    "BTCUSDT",
+    "ETHUSDT",
+    "SOLUSDT",
+    "HYPEUSDT",
+    "BNBUSDT",
+    "ZECUSDT"
+  ],
+  "decisions": null,
+  "execution_log": [],
+  "success": false,
+  "error_message": "获取AI决策失败: 解析AI响应失败: 决策验证失败: 决策 #2 验证失败: 杠杆必须在1-5之间（SOLUSDT，当前配置上限5倍）: 10\n\n=== AI思维链分析 ===\n## 思维链分析\n\n当前夏普比率-0.32，处于收缩模式，需要谨慎交易。ETH空头持仓已45分钟，4小时趋势显示EMA20(3885) \u003c EMA50(3936)，MACD持续为负，下跌趋势明确，应继续持有。扫描新机会发现SOLUSDT有较强做多信号：4小时EMA20\u003cEMA50但MACD改善，3分钟价格突破EMA20，RSI超买但OI上升确认趋势。预期收益1.5%满足手续费要求。\n\n## JSON决策\n\n```json"
+}

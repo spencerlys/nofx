@@ -1,0 +1,30 @@
+{
+  "timestamp": "2025-11-01T23:56:25.564988Z",
+  "cycle_number": 26,
+  "input_prompt": "",
+  "cot_trace": "",
+  "decision_json": "",
+  "account_state": {
+    "total_balance": 91.201082,
+    "available_balance": 91.201082,
+    "total_unrealized_profit": -9.798918,
+    "position_count": 0,
+    "margin_used_pct": 0
+  },
+  "positions": null,
+  "candidate_coins": [
+    "BTCUSDT",
+    "SOLUSDT",
+    "ASTERUSDT",
+    "BNBUSDT",
+    "ZECUSDT",
+    "ETHUSDT",
+    "HYPEUSDT",
+    "XRPUSDT",
+    "DOGEUSDT"
+  ],
+  "decisions": null,
+  "execution_log": [],
+  "success": false,
+  "error_message": "获取AI决策失败: 解析AI响应失败: 决策验证失败: 决策 #1 验证失败: 杠杆必须在1-5之间（ZECUSDT，当前配置上限5倍）: 10\n\n=== AI思维链分析 ===\n**思维链分析**：\n夏普比率-0.34处于轻微亏损状态，必须执行收缩模式。BTC 4小时显示下跌趋势（EMA20 \u003c EMA50，MACD为负），市场整体偏空。HYPEUSDT虽然历史表现最佳，但当前处于超卖状态且无明显反转信号。ZECUSDT资金费率为-0.16%显示看跌情绪强烈，4小时强势上涨但短期回调，符合做多回调策略。\n\n**Confidence评分**：趋势一致性15（4h涨 vs 3min回调）+ 指标共振15（EMA+MACD支持）+ OI确认10（稳定）+ R:R 20（1:5）+ 市场环境15（BTC下跌但ZEC独立）= 75分\n\n预期收益1.25%，手续费0.09%，净收益1.16%，收益/手续费=13.9倍，符合要求。\n\n```json"
+}
