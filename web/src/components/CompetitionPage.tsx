@@ -109,7 +109,6 @@ export function CompetitionPage() {
           <div className="space-y-2">
             {sortedTraders.map((trader, index) => {
               const isLeader = index === 0;
-              const traderColor = getTraderColor(sortedTraders, trader.trader_id);
 
               return (
                 <div
@@ -121,24 +120,21 @@ export function CompetitionPage() {
                     boxShadow: isLeader ? '0 3px 15px rgba(240, 185, 11, 0.12), 0 0 0 1px rgba(240, 185, 11, 0.15)' : '0 1px 4px rgba(0, 0, 0, 0.3)'
                   }}
                 >
-                  <div className="flex items-center justify-between">
+                  <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
                     {/* Rank & Name */}
                     <div className="flex items-center gap-3">
-                      <div className="text-2xl w-6">
+                      <div className="text-2xl w-6 flex-shrink-0">
                         {index === 0 ? '🥇' : index === 1 ? '🥈' : '🥉'}
                       </div>
-                      <div>
-                        <div className="font-bold text-sm" style={{ color: '#EAECEF' }}>{trader.trader_name}</div>
-                        <div className="text-xs mono font-semibold" style={{ color: traderColor }}>
-                          {trader.ai_model.toUpperCase()}
-                        </div>
+                      <div className="min-w-0">
+                        <div className="font-bold text-sm truncate" style={{ color: '#EAECEF' }}>{trader.trader_name}</div>
                         {/* Wallet Address Link */}
                         {trader.wallet_address && (
                           <a
                             href={`https://hyperdash.info/zh-CN/trader/${trader.wallet_address}`}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-xs mono hover:underline transition-colors"
+                            className="text-xs mono hover:underline transition-colors block truncate"
                             style={{ color: '#0ECB81' }}
                             onMouseEnter={(e) => e.currentTarget.style.textDecoration = 'underline'}
                             onMouseLeave={(e) => e.currentTarget.style.textDecoration = 'none'}
@@ -149,68 +145,60 @@ export function CompetitionPage() {
                       </div>
                     </div>
 
-                    {/* Stats */}
-                    <div className="flex items-center gap-3">
-                      {/* Total Equity */}
-                      <div className="text-right">
-                        <div className="text-xs" style={{ color: '#848E9C' }}>{t('equity', language)}</div>
+                    {/* 2x2 Metrics Grid - Mobile Optimized */}
+                    <div className="grid grid-cols-2 gap-2 w-full sm:w-auto sm:min-w-[280px]">
+                      {/* Equity */}
+                      <div className="text-center p-2 rounded" style={{ background: 'rgba(43, 49, 57, 0.3)' }}>
+                        <div className="text-xs mb-0.5" style={{ color: '#848E9C' }}>{t('equity', language)}</div>
                         <div className="text-sm font-bold mono" style={{ color: '#EAECEF' }}>
                           {trader.total_equity?.toFixed(2) || '0.00'}
                         </div>
                       </div>
 
                       {/* Win Rate */}
-                      {trader.win_rate !== undefined && (
-                        <div className="text-right">
-                          <div className="text-xs" style={{ color: '#848E9C' }}>
-                            {language === 'zh' ? '胜率' : 'Win Rate'}
-                          </div>
-                          <div
-                            className="text-sm font-bold mono"
-                            style={{ color: trader.win_rate >= 60 ? '#0ECB81' : '#F6465D' }}
-                          >
-                            {trader.win_rate.toFixed(1)}%
-                          </div>
+                      <div className="text-center p-2 rounded" style={{ background: 'rgba(43, 49, 57, 0.3)' }}>
+                        <div className="text-xs mb-0.5" style={{ color: '#848E9C' }}>
+                          {language === 'zh' ? '胜率' : 'Win Rate'}
                         </div>
-                      )}
+                        <div
+                          className="text-sm font-bold mono"
+                          style={{ color: trader.win_rate !== undefined && trader.win_rate >= 60 ? '#0ECB81' : '#F6465D' }}
+                        >
+                          {trader.win_rate !== undefined ? `${trader.win_rate.toFixed(1)}%` : 'N/A'}
+                        </div>
+                      </div>
 
                       {/* P&L */}
-                      <div className="text-right min-w-[90px]">
-                        <div className="text-xs" style={{ color: '#848E9C' }}>{t('pnl', language)}</div>
+                      <div className="text-center p-2 rounded" style={{ background: 'rgba(43, 49, 57, 0.3)' }}>
+                        <div className="text-xs mb-0.5" style={{ color: '#848E9C' }}>{t('pnl', language)}</div>
                         <div
-                          className="text-lg font-bold mono"
+                          className="text-sm font-bold mono"
                           style={{ color: (trader.total_pnl ?? 0) >= 0 ? '#0ECB81' : '#F6465D' }}
                         >
                           {(trader.total_pnl ?? 0) >= 0 ? '+' : ''}
                           {trader.total_pnl_pct?.toFixed(2) || '0.00'}%
                         </div>
-                        <div className="text-xs mono" style={{ color: '#848E9C' }}>
-                          {(trader.total_pnl ?? 0) >= 0 ? '+' : ''}{trader.total_pnl?.toFixed(2) || '0.00'}
-                        </div>
                       </div>
 
-                      {/* Positions */}
-                      <div className="text-right">
-                        <div className="text-xs" style={{ color: '#848E9C' }}>{t('pos', language)}</div>
+                      {/* Position */}
+                      <div className="text-center p-2 rounded" style={{ background: 'rgba(43, 49, 57, 0.3)' }}>
+                        <div className="text-xs mb-0.5" style={{ color: '#848E9C' }}>{t('pos', language)}</div>
                         <div className="text-sm font-bold mono" style={{ color: '#EAECEF' }}>
                           {trader.position_count}
                         </div>
-                        <div className="text-xs" style={{ color: '#848E9C' }}>
-                          {trader.margin_used_pct.toFixed(1)}%
-                        </div>
                       </div>
+                    </div>
 
-                      {/* Status */}
-                      <div>
-                        <div
-                          className="px-2 py-1 rounded text-xs font-bold"
-                          style={trader.is_running
-                            ? { background: 'rgba(14, 203, 129, 0.1)', color: '#0ECB81' }
-                            : { background: 'rgba(246, 70, 93, 0.1)', color: '#F6465D' }
-                          }
-                        >
-                          {trader.is_running ? '●' : '○'}
-                        </div>
+                    {/* Status Indicator - Hidden on mobile, shown on larger screens */}
+                    <div className="hidden sm:block flex-shrink-0">
+                      <div
+                        className="px-2 py-1 rounded text-xs font-bold"
+                        style={trader.is_running
+                          ? { background: 'rgba(14, 203, 129, 0.1)', color: '#0ECB81' }
+                          : { background: 'rgba(246, 70, 93, 0.1)', color: '#F6465D' }
+                        }
+                      >
+                        {trader.is_running ? '●' : '○'}
                       </div>
                     </div>
                   </div>
