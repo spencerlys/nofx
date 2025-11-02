@@ -251,7 +251,7 @@ func buildSystemPrompt(accountEquity float64, btcEthLeverage, altcoinLeverage, s
 	sb.WriteString("3. **confidence** (信心度 0-100): 基于专业判断诚实评估（可参考下方评分框架，但允许灵活调整）\n")
 	sb.WriteString("4. **risk_usd** (风险金额): |入场价 - 止损价| × 仓位数量\n\n")
 	sb.WriteString("**硬性约束**:\n")
-	sb.WriteString(fmt.Sprintf("- **风险回报比**: 必须 ≥ 1:3（冒1%%风险，赚3%%+收益）\n"))
+	sb.WriteString(fmt.Sprintf("- **风险回报比**: 必须 ≥ 1:2（冒1%%风险，赚2%%+收益）\n"))
 	sb.WriteString("- **最多持仓**: 3个币种（质量>数量）\n")
 	sb.WriteString(fmt.Sprintf("- **单币仓位**: 山寨币 %.0f-%.0f USDT | BTC/ETH %.0f-%.0f USDT\n",
 		accountEquity*0.8, accountEquity*1.5, accountEquity*5, accountEquity*10))
@@ -298,7 +298,7 @@ func buildSystemPrompt(accountEquity float64, btcEthLeverage, altcoinLeverage, s
 	sb.WriteString("- 震荡市场（无明确趋势）→ 观望或极小仓位\n\n")
 	sb.WriteString("**趋势优先级**: 4小时趋势 > 3分钟信号\n")
 	sb.WriteString("- 3分钟数据用于寻找入场时机，不能用来对抗4小时主趋势\n")
-	sb.WriteString("- 只在主趋势方向寻找机会，逆势交易需要极高确定性（confidence > 85）\n\n")
+	sb.WriteString("- 只在主趋势方向寻找机会，逆势交易需要极高确定性（confidence ≥ 90）\n\n")
 	sb.WriteString("---\n\n")
 
 	// === 优化 1: 动态多时间框架分析 ===
@@ -317,7 +317,7 @@ func buildSystemPrompt(accountEquity float64, btcEthLeverage, altcoinLeverage, s
 	sb.WriteString("  - 如果 3min 出现做多信号，必须选择 \"wait\"，不能开仓\n")
 	sb.WriteString("  - 数据权重: 4h 70% + 3min 30%\n\n")
 	sb.WriteString("**震荡区间**（4h EMA20 和 EMA50 缠绕 + MACD 在零轴附近波动）:\n")
-	sb.WriteString("  - ⚠️ **高风险区域**，两个方向都可以，但必须收紧止损至 1.5%\n")
+	sb.WriteString("  - ⚠️ **高风险区域**，两个方向都可以，但止损需收紧至 ≤ 1.0 × ATR\n")
 	sb.WriteString("  - Confidence 门槛提高至 ≥ 85（而非正常的 75）\n")
 	sb.WriteString("  - 仓位限制为正常的 50%\n")
 	sb.WriteString("  - 数据权重: 4h 50% + 3min 50%\n\n")
@@ -414,8 +414,8 @@ func buildSystemPrompt(accountEquity float64, btcEthLeverage, altcoinLeverage, s
 	sb.WriteString("  - ❌ **禁止做多**（除非 RSI < 20 极端超卖）\n")
 	sb.WriteString("  - 如果 3min 出现做多信号，必须选择 \"wait\"\n\n")
 	sb.WriteString("- **震荡区间**（4h 无明确趋势）:\n")
-	sb.WriteString("  - 两个方向都可以，但必须收紧止损至 1.5%\n")
-	sb.WriteString("  - Confidence 门槛提高至 ≥ 80\n\n")
+	sb.WriteString("  - 两个方向都可以，但止损需收紧至 ≤ 1.0 × ATR\n")
+	sb.WriteString("  - Confidence 门槛提高至 ≥ 85\n\n")
 	sb.WriteString("**3分钟数据使用限制**:\n")
 	sb.WriteString("- 3分钟数据**仅用于寻找入场时机**（精确入场点）\n")
 	sb.WriteString("- **严格禁止**使用 3分钟信号对抗 4小时主趋势\n")
@@ -447,7 +447,7 @@ func buildSystemPrompt(accountEquity float64, btcEthLeverage, altcoinLeverage, s
 	sb.WriteString("   - R:R ≥ 1:5 = 20 分\n")
 	sb.WriteString("   - R:R ≥ 1:4 = 15 分\n")
 	sb.WriteString("   - R:R ≥ 1:3 = 10 分\n")
-	sb.WriteString("   - R:R < 1:3 = 0 分（禁止交易）\n\n")
+	sb.WriteString("   - R:R < 1:2 = 0 分（禁止交易）\n\n")
 	sb.WriteString("5. **市场环境 (0-20 分)**:\n")
 	sb.WriteString("   - BTC 趋势明确且与交易方向一致 = 20 分\n")
 	sb.WriteString("   - BTC 中性，币种独立走势 = 15 分\n")
@@ -480,7 +480,7 @@ func buildSystemPrompt(accountEquity float64, btcEthLeverage, altcoinLeverage, s
 	sb.WriteString("     • 是否错过了做空机会（只做多）？\n")
 	sb.WriteString("     • 是否在震荡市场频繁交易？\n\n")
 	sb.WriteString("**夏普比率 -0.5 ~ 0** (轻微亏损):\n")
-	sb.WriteString("  → ⚠️ **收缩模式**: 仅执行 confidence ≥ 80 的交易\n")
+	sb.WriteString("  → ⚠️ **收缩模式**: 仅执行 confidence ≥ 85 的交易\n")
 	sb.WriteString("  → 仓位降低 20-30%\n")
 	sb.WriteString("  → 避免震荡币种，只做强趋势\n\n")
 	sb.WriteString("**夏普比率 0 ~ 0.7** (稳健正收益):\n")
@@ -502,8 +502,8 @@ func buildSystemPrompt(accountEquity float64, btcEthLeverage, altcoinLeverage, s
 	sb.WriteString("3. **扫描新机会**（仅在有可用资金时）:\n")
 	sb.WriteString("   - 4小时趋势明确吗？\n")
 	sb.WriteString("   - 3分钟有强入场信号吗？\n")
-	sb.WriteString("   - 风险回报比 ≥ 1:3 吗？\n")
-	sb.WriteString("   - 信心度 ≥ 70 吗？\n")
+	sb.WriteString("   - 风险回报比 ≥ 1:2 吗？\n")
+	sb.WriteString("   - 信心度 ≥ 75 吗？\n")
 	sb.WriteString("4. **输出决策**: 思维链分析 + JSON决策数组\n\n")
 	sb.WriteString("**优先级**: 持仓管理 > 风险控制 > 寻找新机会\n\n")
 	sb.WriteString("**当不确定时，选择 'hold' 或 'wait'，不要强行交易。**\n\n")
@@ -527,7 +527,7 @@ func buildSystemPrompt(accountEquity float64, btcEthLeverage, altcoinLeverage, s
 	sb.WriteString("- `position_size_usd`: 仓位大小（美元）\n")
 	sb.WriteString("- `stop_loss`: 止损价格（必须合理）\n")
 	sb.WriteString("- `take_profit`: 止盈价格（必须合理）\n")
-	sb.WriteString("- `confidence`: 信心度（0-100，开仓建议 ≥ 70）\n")
+	sb.WriteString("- `confidence`: 信心度（0-100，开仓建议 ≥ 75）\n")
 	sb.WriteString("- `risk_usd`: 风险金额（美元）\n")
 	sb.WriteString("- `reasoning`: 决策理由（简洁，<200字）\n\n")
 	sb.WriteString("**开仓时必填**: leverage, position_size_usd, stop_loss, take_profit, confidence, risk_usd, reasoning\n")
@@ -593,6 +593,14 @@ func buildSystemPrompt(accountEquity float64, btcEthLeverage, altcoinLeverage, s
 	sb.WriteString("3. **冷静期**: 平仓后必须等待至少 1 个决策周期才能开新仓\n")
 	sb.WriteString("4. **连续亏损保护**: 如果连续 3 笔亏损，暂停开新仓 1 个周期\n")
 	sb.WriteString("5. **夏普比率约束**: Sharpe < -0.5 时，完全禁止开新仓\n\n")
+	sb.WriteString("**规则优先级（从强到弱）**:\n")
+	sb.WriteString("1. 硬性禁止/停用（禁止事项、Sharpe < -0.5、逆势规则等）\n")
+	sb.WriteString("2. 连续亏损保护与冷静期\n")
+	sb.WriteString("3. 市场状态（震荡/趋势）的阈值与仓位限制\n")
+	sb.WriteString("4. Credibility Mode（质量分驱动的仓位/杠杆限制）\n")
+	sb.WriteString("5. 基线阈值（Confidence ≥ 75、R:R ≥ 1:2）\n\n")
+	sb.WriteString("当同时命中多条限制时，取最严格限制（仓位/杠杆取最小值，阈值取最大值）。\n\n")
+
 	sb.WriteString("**决策流程**:\n\n")
 	sb.WriteString("1. 仔细阅读下方的市场数据（记住：数组顺序是 最旧→最新）\n")
 	sb.WriteString("2. 检查历史表现（连续亏损？夏普比率？）\n")
@@ -844,7 +852,7 @@ func buildUserPrompt(ctx *Context) string {
 					sb.WriteString(fmt.Sprintf("- ✅ **优先**: %s 表现最佳，可优先考虑该币种的机会\n", perfData.BestSymbol))
 				}
 				if perfData.WinRate < 50 && perfData.TotalTrades >= 5 {
-					sb.WriteString("- ⚠️ **胜率偏低**: 提高开仓门槛（confidence ≥ 80），减少交易频率\n")
+					sb.WriteString("- ⚠️ **胜率偏低**: 提高开仓门槛（confidence ≥ 85），减少交易频率\n")
 				}
 				if perfData.ProfitFactor < 1.5 && perfData.TotalTrades >= 5 {
 					sb.WriteString("- ⚠️ **盈亏比不佳**: 扩大止盈目标，收紧止损，提高风险回报比\n")
@@ -1019,7 +1027,7 @@ func buildUserPrompt(ctx *Context) string {
 	sb.WriteString("- 🚨 **BTC 相关性**: BTC 4h 下跌时，禁止做多山寨币\n\n")
 	sb.WriteString("**标准检查清单**:\n")
 	sb.WriteString("- ✅ 数据顺序: 最旧 → 最新（数组最后一个元素是最新）\n")
-	sb.WriteString("- ✅ 风险回报比: ≥ 1:3（强制要求）\n")
+	sb.WriteString("- ✅ 风险回报比: ≥ 1:2（强制要求）\n")
 	sb.WriteString("- ✅ 预期收益: > 0.5%（手续费 0.09% 的 5 倍以上）\n")
 	sb.WriteString("- ✅ Confidence: ≥ 75（基于量化评分，不能凭感觉）\n")
 	sb.WriteString("- ✅ Reasoning: 必须说明 4h 趋势、预期收益、手续费占比、Confidence 计算过程\n\n")
@@ -1198,7 +1206,7 @@ func validateDecision(d *Decision, accountEquity float64, btcEthLeverage, altcoi
 			}
 		}
 
-		// 验证风险回报比（必须≥1:3）
+		// 验证风险回报比（必须≥1:2）
 		// 计算入场价（假设当前市价）
 		var entryPrice float64
 		if d.Action == "open_long" {
@@ -1224,9 +1232,9 @@ func validateDecision(d *Decision, accountEquity float64, btcEthLeverage, altcoi
 			}
 		}
 
-		// 硬约束：风险回报比必须≥2.5
-		if riskRewardRatio < 2.5 {
-			return fmt.Errorf("风险回报比过低(%.2f:1)，必须≥2.5:1 [风险:%.2f%% 收益:%.2f%%] [止损:%.2f 止盈:%.2f]",
+		// 硬约束：风险回报比必须≥2.0
+		if riskRewardRatio < 2.0 {
+			return fmt.Errorf("风险回报比过低(%.2f:1)，必须≥2.0:1 [风险:%.2f%% 收益:%.2f%%] [止损:%.2f 止盈:%.2f]",
 				riskRewardRatio, riskPercent, rewardPercent, d.StopLoss, d.TakeProfit)
 		}
 	}
