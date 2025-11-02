@@ -144,6 +144,35 @@ if [ -d ".git" ]; then
     CURRENT_COMMIT=$(git rev-parse --short HEAD)
     print_info "Current commit: $CURRENT_COMMIT"
 
+    # Auto-commit new decision logs before pulling
+    if [ -d "decision_logs" ]; then
+        print_info "Checking for new decision logs..."
+
+        # Check if there are any untracked or modified files in decision_logs/
+        if [ -n "$(git status --porcelain decision_logs/ 2>/dev/null)" ]; then
+            print_info "Found new decision logs. Committing..."
+
+            # Add all files in decision_logs/
+            git add decision_logs/
+
+            # Count new files
+            NEW_FILES=$(git status --porcelain decision_logs/ | grep "^A" | wc -l | tr -d ' ')
+            MODIFIED_FILES=$(git status --porcelain decision_logs/ | grep "^M" | wc -l | tr -d ' ')
+
+            # Create commit message
+            COMMIT_MSG="Auto-commit decision logs: ${NEW_FILES} new, ${MODIFIED_FILES} modified - $(date +%Y-%m-%d\ %H:%M:%S)"
+
+            # Commit
+            if git commit -m "$COMMIT_MSG"; then
+                print_success "Decision logs committed: $COMMIT_MSG"
+            else
+                print_warning "Failed to commit decision logs (may be empty)"
+            fi
+        else
+            print_info "No new decision logs to commit"
+        fi
+    fi
+
     # Stash any local changes (config.json and .env are already in .gitignore)
     print_info "Stashing local changes..."
     if git diff --quiet && git diff --cached --quiet; then
