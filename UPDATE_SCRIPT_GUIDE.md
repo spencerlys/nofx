@@ -121,7 +121,7 @@ Rebuild Plan:
 
 #### 3. **Pulls Latest Code from Git**
 - Shows current branch and commit
-- Stashes local changes (preserves config.json and .env)
+- Stashes local changes (config.json and .env are already in .gitignore)
 - Fetches and pulls latest changes with rebase
 - Shows recent commit history
 
@@ -129,6 +129,7 @@ Rebuild Plan:
 ```
 Current branch: main
 Current commit: a1b2c3d
+Stashing local changes...
 Fetching latest changes...
 Code updated successfully: a1b2c3d → e4f5g6h
 

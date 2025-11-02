@@ -144,9 +144,13 @@ if [ -d ".git" ]; then
     CURRENT_COMMIT=$(git rev-parse --short HEAD)
     print_info "Current commit: $CURRENT_COMMIT"
 
-    # Stash any local changes (except config.json and .env)
-    print_info "Stashing local changes (preserving config.json and .env)..."
-    git stash push -u -m "Auto-stash before update $(date +%Y%m%d_%H%M%S)" -- ':!config.json' ':!.env'
+    # Stash any local changes (config.json and .env are already in .gitignore)
+    print_info "Stashing local changes..."
+    if git diff --quiet && git diff --cached --quiet; then
+        print_info "No local changes to stash"
+    else
+        git stash push -m "Auto-stash before update $(date +%Y%m%d_%H%M%S)"
+    fi
 
     # Pull latest changes
     print_info "Fetching latest changes..."
