@@ -132,6 +132,20 @@ export function CompetitionPage() {
                         <div className="text-xs mono font-semibold" style={{ color: traderColor }}>
                           {trader.ai_model.toUpperCase()}
                         </div>
+                        {/* Wallet Address Link */}
+                        {trader.wallet_address && (
+                          <a
+                            href={`https://hyperdash.info/zh-CN/trader/${trader.wallet_address}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-xs mono hover:underline transition-colors"
+                            style={{ color: '#0ECB81' }}
+                            onMouseEnter={(e) => e.currentTarget.style.textDecoration = 'underline'}
+                            onMouseLeave={(e) => e.currentTarget.style.textDecoration = 'none'}
+                          >
+                            {trader.wallet_address.slice(0, 6)}...{trader.wallet_address.slice(-6)}
+                          </a>
+                        )}
                       </div>
                     </div>
 
@@ -144,6 +158,21 @@ export function CompetitionPage() {
                           {trader.total_equity?.toFixed(2) || '0.00'}
                         </div>
                       </div>
+
+                      {/* Win Rate */}
+                      {trader.win_rate !== undefined && (
+                        <div className="text-right">
+                          <div className="text-xs" style={{ color: '#848E9C' }}>
+                            {language === 'zh' ? '胜率' : 'Win Rate'}
+                          </div>
+                          <div
+                            className="text-sm font-bold mono"
+                            style={{ color: trader.win_rate >= 60 ? '#0ECB81' : '#F6465D' }}
+                          >
+                            {trader.win_rate.toFixed(1)}%
+                          </div>
+                        </div>
+                      )}
 
                       {/* P&L */}
                       <div className="text-right min-w-[90px]">

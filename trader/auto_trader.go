@@ -521,11 +521,12 @@ func (at *AutoTrader) buildTradingContext() (*decision.Context, error) {
 
 	// 6. 构建上下文
 	ctx := &decision.Context{
-		CurrentTime:     time.Now().Format("2006-01-02 15:04:05"),
-		RuntimeMinutes:  int(time.Since(at.startTime).Minutes()),
-		CallCount:       at.callCount,
-		BTCETHLeverage:  at.config.BTCETHLeverage,  // 使用配置的杠杆倍数
-		AltcoinLeverage: at.config.AltcoinLeverage, // 使用配置的杠杆倍数
+		CurrentTime:         time.Now().Format("2006-01-02 15:04:05"),
+		RuntimeMinutes:      int(time.Since(at.startTime).Minutes()),
+		CallCount:           at.callCount,
+		BTCETHLeverage:      at.config.BTCETHLeverage,              // 使用配置的杠杆倍数
+		AltcoinLeverage:     at.config.AltcoinLeverage,             // 使用配置的杠杆倍数
+		ScanIntervalMinutes: int(at.config.ScanInterval.Minutes()), // 使用配置的决策间隔（转换为分钟）
 		Account: decision.AccountInfo{
 			TotalEquity:      totalEquity,
 			AvailableBalance: availableBalance,
@@ -738,6 +739,43 @@ func (at *AutoTrader) GetAIModel() string {
 // GetDecisionLogger 获取决策日志记录器
 func (at *AutoTrader) GetDecisionLogger() *logger.DecisionLogger {
 	return at.decisionLogger
+}
+
+// GetWalletAddress 获取钱包地址（用于前端显示）
+func (at *AutoTrader) GetWalletAddress() string {
+	// 根据交易所类型返回对应的钱包地址
+	switch at.exchange {
+	case "hyperliquid":
+		return at.config.HyperliquidWalletAddr
+	case "aster":
+		return at.config.AsterUser
+	case "binance":
+		return "" // Binance 没有钱包地址概念
+	default:
+		return ""
+	}
+}
+
+// GetPerformance 获取历史表现数据（用于API）
+func (at *AutoTrader) GetPerformance() map[string]interface{} {
+	// 分析最近100个周期的表现
+	performance, err := at.decisionLogger.AnalyzePerformance(100)
+	if err != nil {
+		return nil
+	}
+
+	// 转换为 map[string]interface{} 格式
+	result := make(map[string]interface{})
+	result["total_trades"] = performance.TotalTrades
+	result["winning_trades"] = performance.WinningTrades
+	result["losing_trades"] = performance.LosingTrades
+	result["win_rate"] = performance.WinRate
+	result["avg_win"] = performance.AvgWin
+	result["avg_loss"] = performance.AvgLoss
+	result["profit_factor"] = performance.ProfitFactor
+	result["sharpe_ratio"] = performance.SharpeRatio
+
+	return result
 }
 
 // GetStatus 获取系统状态（用于API）

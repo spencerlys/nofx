@@ -672,7 +672,16 @@ function DecisionCard({ decision, language }: { decision: DecisionRecord; langua
           </button>
           {showDecisionJSON && (
             <div className="mt-2 rounded p-4 text-sm font-mono whitespace-pre-wrap max-h-96 overflow-y-auto" style={{ background: '#0B0E11', border: '1px solid #2B3139', color: '#EAECEF' }}>
-              {decision.decision_json}
+              {(() => {
+                try {
+                  // Parse and format JSON with proper indentation
+                  const parsed = JSON.parse(decision.decision_json);
+                  return JSON.stringify(parsed, null, 2);
+                } catch (e) {
+                  // If parsing fails, show raw content
+                  return decision.decision_json;
+                }
+              })()}
             </div>
           )}
         </div>

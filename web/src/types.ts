@@ -89,6 +89,7 @@ export interface TraderInfo {
   trader_id: string;
   trader_name: string;
   ai_model: string;
+  wallet_address?: string; // 钱包地址（可选，Binance 没有）
 }
 
 export interface CompetitionTraderData {
@@ -102,6 +103,8 @@ export interface CompetitionTraderData {
   margin_used_pct: number;
   call_count: number;
   is_running: boolean;
+  wallet_address?: string; // 钱包地址（可选，Binance 没有）
+  win_rate?: number;       // 胜率（可选，可能没有历史数据）
 }
 
 export interface CompetitionData {

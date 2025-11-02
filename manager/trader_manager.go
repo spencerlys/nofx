@@ -150,8 +150,9 @@ func (tm *TraderManager) GetComparisonData() (map[string]interface{}, error) {
 		}
 
 		status := t.GetStatus()
+		performance := t.GetPerformance() // 获取历史表现数据（包含胜率）
 
-		traders = append(traders, map[string]interface{}{
+		traderData := map[string]interface{}{
 			"trader_id":       t.GetID(),
 			"trader_name":     t.GetName(),
 			"ai_model":        t.GetAIModel(),
@@ -162,7 +163,21 @@ func (tm *TraderManager) GetComparisonData() (map[string]interface{}, error) {
 			"margin_used_pct": account["margin_used_pct"],
 			"call_count":      status["call_count"],
 			"is_running":      status["is_running"],
-		})
+			"wallet_address":  t.GetWalletAddress(), // 添加钱包地址
+		}
+
+		// 添加胜率数据（如果有历史表现数据）
+		if performance != nil {
+			if winRate, ok := performance["win_rate"].(float64); ok {
+				traderData["win_rate"] = winRate
+			} else {
+				traderData["win_rate"] = 0.0
+			}
+		} else {
+			traderData["win_rate"] = 0.0
+		}
+
+		traders = append(traders, traderData)
 	}
 
 	comparison["traders"] = traders

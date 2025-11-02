@@ -121,9 +121,10 @@ func (s *Server) handleTraderList(c *gin.Context) {
 
 	for _, t := range traders {
 		result = append(result, map[string]interface{}{
-			"trader_id":   t.GetID(),
-			"trader_name": t.GetName(),
-			"ai_model":    t.GetAIModel(),
+			"trader_id":      t.GetID(),
+			"trader_name":    t.GetName(),
+			"ai_model":       t.GetAIModel(),
+			"wallet_address": t.GetWalletAddress(), // 添加钱包地址
 		})
 	}
 
