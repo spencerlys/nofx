@@ -624,12 +624,12 @@ func buildUserPrompt(ctx *Context) string {
 	var sb strings.Builder
 
 	// === 时间上下文 ===
-	sb.WriteString(fmt.Sprintf("交易已运行 **%d 分钟** | 当前周期: **#%d** | 时间: %s\n\n",
-		ctx.RuntimeMinutes, ctx.CallCount, ctx.CurrentTime))
+	sb.WriteString(fmt.Sprintf("交易已运行 **%d 分钟** | 当前周期: **#%d** (每 %d 分钟决策一次) | 时间: %s\n\n",
+		ctx.RuntimeMinutes, ctx.CallCount, ctx.ScanIntervalMinutes, ctx.CurrentTime))
 
 	sb.WriteString("⚠️ **重要提醒**: 下方所有价格和指标数据的顺序为: **最旧 → 最新**\n")
 	sb.WriteString("**数组的最后一个元素是最新数据，第一个元素是最旧数据。**\n\n")
-	sb.WriteString(fmt.Sprintf("**时间框架说明**: 除非特别标注，日内序列数据为 **%d分钟间隔**。\n\n", ctx.ScanIntervalMinutes))
+	sb.WriteString("**时间框架说明**: 日内序列数据（IntradaySeries）为 **3分钟K线间隔**（固定），长期数据（LongerTermContext）为 **4小时K线间隔**。\n\n")
 	sb.WriteString("---\n\n")
 
 	// === 性能反馈与历史复盘（前置，重要！）===
